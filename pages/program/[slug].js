@@ -8,13 +8,14 @@ import { changeLayOutColors, formatDates } from "../../utils/helpers";
 
 function Event({ event }) {
   const [scrollOpacity, setScrollOpacity] = useState(1);
+  if (!event || !event.length) {
+    return <div>Loading...</div>;
+  }
 
   const calculateOpacity = (offset) => {
     const limit = -150;
-
     return (offset - limit + 100) / 400;
   };
-
   const bodyRef = useRef(null);
 
   useScrollPosition(({ prevPos, currPos }) => {
@@ -26,9 +27,6 @@ function Event({ event }) {
     changeLayOutColors(backgroundColor, true);
   }, [backgroundColor]);
 
-  if (!event || !event.length) {
-    return <div>Loading...</div>;
-  }
   const { body, timeStart, timeEnd, mainImage, title } = event[0];
 
   const shouldRenderBody = event.body && event.body.length;
