@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const PhotographerPreview = ({ backgroundColor, color, photographer }) => {
   const [hovering, setHovering] = useState(false);
@@ -18,7 +19,7 @@ const PhotographerPreview = ({ backgroundColor, color, photographer }) => {
         className='flex flex-col w-full md:w-80 my-8 mx-auto transform transition duration-700 ease-in-out hover:scale-105'
       >
         <div className='h-1/2 '>
-          <img
+          <Image
             className='h-full object-cover w-full'
             src={`https://picsum.photos/800`}
             alt='lorem picsum'

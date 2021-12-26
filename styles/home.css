@@ -1,22 +1,9 @@
 .hero {
-  background-image: url("../imgs/door.webp");
-  background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.15) 0%,
-      rgba(0, 0, 0, 0.15) 50%,
-      rgba(0, 0, 0, 0.15) 100%
-    ),
-    url("../imgs/door.webp") no-repeat;
-  background-size: cover;
-  background-position: 0% 80%;
-  width: 100vw;
-  height: 100vh;
-  filter: grayscale(100%);
+  object-position: 0% 80%;
 }
 
 @media screen and (max-width: 1024px) {
   .hero {
-    background-position: 50%;
+    object-position: 50%;
   }
 }
-

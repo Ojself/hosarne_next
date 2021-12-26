@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { formatDates } from "../utils/helpers";
 import Link from "next/link";
+import Image from "next/image";
+import { formatDates } from "../utils/helpers";
 
 const EventPreview = ({ somethingIsHovering, handleEventHover, event }) => {
   const { mainImage, title, theme, isMainEvent, timeEnd, timeStart, slug } =
@@ -32,7 +33,7 @@ const EventPreview = ({ somethingIsHovering, handleEventHover, event }) => {
             {formatDates(timeStart, timeEnd)}
           </h5>
           <div className=''>
-            <img
+            <Image
               className='object-cover'
               src={mainImage.asset.url}
               alt={mainImage.alt}

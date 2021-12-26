@@ -11,8 +11,6 @@ const Footer = () => {
         url='https://www.instagram.com/hos_arne/'
       />
       <SocialIcon
-        className=''
-        id='fb-icon'
         style={{ height: "2.5em" }}
         fgColor='#000'
         bgColor='transparent'

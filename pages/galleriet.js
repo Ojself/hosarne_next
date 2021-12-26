@@ -1,4 +1,5 @@
-import  { useEffect } from "react";
+import { useEffect } from "react";
+import Image from "next/image";
 import { changeLayOutColors } from "../utils/helpers";
 const Gallery = () => {
   useEffect(() => {
@@ -8,7 +9,7 @@ const Gallery = () => {
     <main className='font-book'>
       <section className='flex flex-col lg:flex-row items-center justify-center '>
         <div className='w-4/5 lg:w-5/12'>
-          <img alt='Galleriet front' src='https://picsum.photos/600/600' />
+          <Image alt='Galleriet front' src='https://picsum.photos/600/600' />
         </div>
         <div className='w-4/5 lg:w-5/12 flex flex-col justify-center'>
           <p className='mb-6'>

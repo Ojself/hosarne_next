@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import BlockContent from "@sanity/block-content-to-react";
 import groq from "groq";
+import Image from "next/image";
 import sanityClient from "../../client";
 import { changeLayOutColors } from "../../utils/helpers";
 
@@ -20,7 +21,7 @@ function Photographer({ photographer }) {
       <h1>{email}</h1>
       <h1>{mobile}</h1>
       <div>
-        <img src={image.asset.url} alt={image.alt} />
+        <Image src={image.asset.url} alt={image.alt} />
       </div>
       <BlockContent
         className='font-extralight'
@@ -29,7 +30,7 @@ function Photographer({ photographer }) {
       />
       <div>
         {images.map((image) => (
-          <img src={image.asset.url} alt={image.alt} />
+          <Image src={image.asset.url} alt={image.alt} />
         ))}
       </div>
     </div>

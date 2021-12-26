@@ -3,6 +3,7 @@ import groq from "groq";
 import BlockContent from "@sanity/block-content-to-react";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import { AiOutlineArrowDown } from "react-icons/ai";
+import Image from "next/image";
 import sanityClient from "../../client";
 import { changeLayOutColors, formatDates } from "../../utils/helpers";
 
@@ -58,7 +59,7 @@ function Event({ event }) {
             {title}
           </h1>
         </section>
-        <img
+        <Image
           className='object-cover w-full h-auto mb-12'
           src={mainImage.asset.url}
           alt={mainImage.alt}

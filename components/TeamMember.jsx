@@ -1,10 +1,11 @@
-const BlockContent = require("@sanity/block-content-to-react");
+import Image from "next/image";
+import BlockContent from "@sanity/block-content-to-react";
 
 const TeamMember = ({ name, title, email, mobile, body, image }) => {
   return (
     <div className='flex lg:flex-row flex-col justify-around font-roman my-6'>
       <div className='w-full lg:w-1/3'>
-        <img src={image.asset.url} alt={image.alt} />
+        <Image src={image.asset.url} alt={image.alt} />
       </div>
       <div className='w-full lg:w-1/3 flex flex-col justify-center'>
         <h5 className='text-xl font-black'>{name}</h5>
