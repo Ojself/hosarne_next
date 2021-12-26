@@ -1,0 +1,90 @@
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Avenir";
+  font-display: swap;
+  src: local("Avenir"), url(../fonts/AvenirLTStd-Black.otf) format("truetype");
+}
+@font-face {
+  font-family: "Avenir-Book";
+  font-display: swap;
+  src: local("Avenir"), url(../fonts/AvenirLTStd-Book.otf) format("truetype");
+}
+@font-face {
+  font-family: "Avenir-Roman";
+  font-display: swap;
+  src: local("Avenir"), url(../fonts/AvenirLTStd-Roman.otf) format("truetype");
+}
+@font-face {
+  font-family: "MonitaSignature";
+  font-display: swap;
+  src: local("MonitaSignature"),
+    url(../fonts/MonitaSignature-Regular.otf) format("truetype");
+}
+
+@font-face {
+  font-family: "Photographer";
+  font-display: swap;
+  src: local("Photographer"), url(../fonts/photographer-regular.woff2) format("truetype");
+}
+
+@font-face {
+  font-family: "PhotographerFX";
+  font-display: swap;
+  src: local("PhotographerFX"), url(../fonts/photographer-regularFX.woff2) format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  min-height: 60vh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.font-swhong {
+  font-family: MonitaSignature, sans-serif;
+}
+
+.font-default {
+  font-family: Avenir, sans-serif;
+}
+
+.font-book {
+  font-family: Avenir-Book, sans-serif;
+}
+.font-roman {
+  font-family: Avenir-Roman, sans-serif;
+}
+
+.font-photographer{
+  font-family: Photographer, sans-serif;
+
+}
+.font-photographer-fx{
+  font-family: PhotographerFX, sans-serif;
+}
+
+#hos_arne-fixed {
+  position: fixed;
+  top: -20%;
+  right: 2px;
+  z-index: 105;
+  transform: rotate(270deg);
+  transform-origin: right bottom;
+  background-image: url("../imgs/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  height:250px;
+}
