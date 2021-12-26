@@ -26,10 +26,10 @@ function Event({ event }) {
     changeLayOutColors(backgroundColor, true);
   }, [backgroundColor]);
 
-  if (!event) return null;
-
-  /* const positionOfBody =
-    document.querySelector("#event-description")?.offsetTop - 500 || 850; */
+  if (!event || !event.length) {
+    return <div>Loading...</div>;
+  }
+  const { body, timeStart, timeEnd, mainImage, title } = event[0];
 
   const shouldRenderBody = event.body && event.body.length;
   return (
@@ -54,23 +54,23 @@ function Event({ event }) {
           className='h-44 lg:h-96 sticky top-64'
         >
           <h5 className='text-lg lg:text-3xl text-center font-thin'>
-            {formatDates(event.timeStart, event.timeEnd)}
+            {formatDates(timeStart, timeEnd)}
           </h5>
           <h1 className='text-3xl lg:text-6xl text-center font-extralight'>
-            {event.title}
+            {title}
           </h1>
         </section>
         <img
           className='object-cover w-full h-auto mb-12'
-          src={event.mainImage.asset.url}
-          alt={event.mainImage.alt}
+          src={mainImage.asset.url}
+          alt={mainImage.alt}
         />
 
         <section ref={bodyRef} id='event-description'>
           {shouldRenderBody && (
             <BlockContent
               className='font-extralight'
-              blocks={event.body}
+              blocks={body}
               renderContainerOnSingleChild
             />
           )}
@@ -118,7 +118,7 @@ export async function getStaticProps(context) {
   const event = await sanityClient.fetch(query, params);
   return {
     props: {
-      event: event[0],
+      event,
     },
   };
 }
