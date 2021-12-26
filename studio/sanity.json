@@ -1,7 +1,8 @@
 {
   "root": true,
   "project": {
-    "name": "hosarne"
+    "name": "hosarne",
+    "basePath": "/studio"
   },
   "api": {
     "projectId": "xqhdibw4",
@@ -17,9 +18,7 @@
   ],
   "env": {
     "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
+      "plugins": ["@sanity/vision"]
     }
   },
   "parts": [

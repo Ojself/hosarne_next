@@ -116,6 +116,7 @@ export async function getStaticProps(context) {
   const { slug } = context.params;
   const params = { slug };
   const event = await sanityClient.fetch(query, params);
+  console.log({ event });
   return {
     props: {
       event,

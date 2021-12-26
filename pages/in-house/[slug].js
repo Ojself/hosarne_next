@@ -76,6 +76,7 @@ export async function getStaticProps(context) {
   const { slug } = context.params;
   const params = { slug };
   const photographer = await sanityClient.fetch(query, params);
+  console.log({ photographer });
   return {
     props: {
       photographer,
