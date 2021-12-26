@@ -8,7 +8,7 @@ function Photographer({ photographer }) {
   useEffect(() => {
     changeLayOutColors("#fff");
   }, []);
-  if (!photographer.length) {
+  if (!photographer || !photographer.length) {
     return <div>Loading...</div>;
   }
   const { name, title, email, mobile, body, image, images } = photographer[0];
