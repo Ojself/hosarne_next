@@ -16,8 +16,8 @@ const InHouse = ({ photographers }) => {
   }
 
   return (
-    <main className='flex flex-col items-center'>
-      <div className='mt-6 flex flex-wrap w-full px-4 lg:px-0'>
+    <main className='flex flex-col items-center mb-32'>
+      <section className='mt-6 flex flex-wrap w-full px-4 lg:px-0'>
         {photographers.map((photographer, i) => {
           return (
             <>
@@ -31,7 +31,7 @@ const InHouse = ({ photographers }) => {
             </>
           );
         })}
-      </div>
+      </section>
     </main>
   );
 };

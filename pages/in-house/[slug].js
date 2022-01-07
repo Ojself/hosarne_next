@@ -15,24 +15,27 @@ function Photographer({ photographer }) {
   const { name, title, email, mobile, body, image, images } = photographer[0];
 
   return (
-    <main className='flex flex-col mb-44'>
-      <section className='flex flex-row justify-center mb-24'>
-        <div className='w-2/5'>
-          <Image image={image} alt={image.alt} />
-        </div>
-        <div className='w-2/5'>
-          <h1>{name}</h1>
-          <h1>{title}</h1>
-          <h1>{email}</h1>
-          <h1>{mobile}</h1>
+    <main className='flex flex-col mt-20 mb-44'>
+      <section className='flex flex-row justify-around mb-24'>
+        <div className='w-1/3'>
+          <h1 className='text-6xl'>{name}</h1>
+          <h1 className='text-xl'>{title}</h1>
+          <h1 className='text-sm'>
+            <a href={`mailto:${email}`}>{email}</a>
+          </h1>
+          <h1 className='text-sm'>{mobile}</h1>
+          <hr className='my-4 w-1/6 border-2 border-black' />
           <BlockContent
             className='font-extralight'
             blocks={body}
             renderContainerOnSingleChild
           />
         </div>
+        <div className='w-2/5'>
+          <Image image={image} alt={image.alt} />
+        </div>
       </section>
-      <section className='my-5 grid grid-cols-1 lg:grid-cols-4 gap-4 mx-4'>
+      <section className='my-5 grid grid-cols-1 lg:grid-cols-4 gap-4 mx-4 '>
         {images.map((image) => (
           <a
             key={image.asset.url}
