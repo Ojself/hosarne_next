@@ -27,7 +27,7 @@ const Footer = () => {
   return (
     <footer
       id='footer'
-      className='pt-12 flex h-60 w-full justify-around bg-white text-base'
+      className='flex h-60 w-full items-center justify-around bg-white text-base'
     >
       <div>
         <div className='uppercase text-xs text-center lg:text-base mb-2'>
