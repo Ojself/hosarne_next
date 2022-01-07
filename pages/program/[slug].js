@@ -70,8 +70,9 @@ function Event({ event }) {
 
         <section ref={bodyRef}>
           {facebookUrl && (
-            <div style={{ zIndex: "110" }} className='flex flex-col items-end'>
+            <div className='flex flex-col items-end'>
               <SocialIcon
+                style={{ zIndex: "110" }}
                 bgColor={backgroundColor}
                 fgColor='#3B5998'
                 network='facebook'
