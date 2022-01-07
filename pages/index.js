@@ -17,7 +17,7 @@ export default function Home() {
       </Head>
       <main className='relative h-screen'>
         <Image
-          className='hero bg-black object-fit flex justify-center items-center grayscale w-screen h-screen'
+          className='hero bg-black object-cover flex justify-center items-center grayscale w-screen h-screen'
           src={door}
           alt='Picture of the main door'
           layout='fill'
