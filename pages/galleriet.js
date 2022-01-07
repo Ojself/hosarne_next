@@ -1,17 +1,23 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import { changeLayOutColors } from "../utils/helpers";
+
 const Gallery = () => {
   useEffect(() => {
     changeLayOutColors("#fff");
   }, []);
   return (
     <main className='font-book'>
-      <section className='flex flex-col lg:flex-row items-center justify-center '>
-        <div className='w-4/5 lg:w-5/12'>
-          <Image alt='Galleriet front' src='https://picsum.photos/600/600' />
+      <section className='flex flex-col lg:flex-row items-center justify-around h-full'>
+        <div className='w-4/5 lg:w-5/12 relative h-screen '>
+          <Image
+            layout='fill'
+            alt='Galleriet front'
+            src='https://picsum.photos/1200/1200'
+            className='object-cover '
+          />
         </div>
-        <div className='w-4/5 lg:w-5/12 flex flex-col justify-center'>
+        <div className='w-4/5 lg:w-5/12 flex flex-col justify-center '>
           <p className='mb-6'>
             Galleriet Hos Arne er et unikt space som ligger åpent eksponert fra
             Leiligheten/Stuen, og vice versa. Galleriet har som et anti-konsept

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "./Image";
 import { formatDates } from "../utils/helpers";
 
 const EventPreview = ({ somethingIsHovering, handleEventHover, event }) => {
@@ -20,25 +20,17 @@ const EventPreview = ({ somethingIsHovering, handleEventHover, event }) => {
     <article
       onMouseEnter={() => handleHovering(true, theme)}
       onMouseLeave={() => handleHovering(false)}
-      className={`transition duration-1000 ease-in-out ${opacity} ${width} mx-6 mb-24 text-black `}
+      className={`transition duration-1000 ease-in-out ${opacity} ${width} mx-2 lg:mx-6 mb-24 text-black`}
     >
-      <Link
-        href={`/program/${slug.current}`}
-
-        /*   state: { event }, */
-      >
+      <Link href={`/program/${slug.current}`}>
         <a className='flex flex-col font-book'>
           <h1 className='text-xl lg:text-3xl'>{title}</h1>
           <h5 className='text-xs lg:text-base'>
             {formatDates(timeStart, timeEnd)}
           </h5>
-          <div className=''>
-            <Image
-              className='object-cover'
-              src={mainImage.asset.url}
-              alt={mainImage.alt}
-            />
-          </div>
+          <figure>
+            <Image image={mainImage} className='' />
+          </figure>
         </a>
       </Link>
     </article>

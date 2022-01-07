@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import groq from 'groq'
-import sanityClient from "../../client";
+import groq from "groq";
+import { sanityClient } from "../../sanity";
 import EventPreview from "../../components/EventPreview";
 import { changeLayOutColors } from "../../utils/helpers";
 
-const Program = ({events}) => {
+const Program = ({ events }) => {
   const [somethingIsHovering, setSomethingIsHovering] = useState(false);
   const [theme, setTheme] = useState("#fff");
 
@@ -16,8 +16,8 @@ const Program = ({events}) => {
     setTheme(theme);
   };
   return (
-    <main id='events-home' className='text-white h-min-screen'>
-      <section className='h-auto flex flex-wrap mt-12 lg:mt-20 lg:mb-32'>
+    <main id='events-home' className='text-white'>
+      <section className='flex flex-wrap mt-12 lg:mt-20 lg:mb-32'>
         {events.map((event) => (
           <EventPreview
             key={event.title}
@@ -31,7 +31,7 @@ const Program = ({events}) => {
   );
 };
 
-const query = groq`*[_type == "event" && timeEnd > now()] | order(timeStart asc){
+const query = groq`*[_type == "event" && timeStart > now()] | order(timeStart asc){
                        title,
                        timeStart,
                        timeEnd,
@@ -46,18 +46,15 @@ const query = groq`*[_type == "event" && timeEnd > now()] | order(timeStart asc)
                            },
                            alt
                        }
-                   }`
-
+                   }`;
 
 export async function getStaticProps(context) {
-  const events = await sanityClient.fetch(query)
+  const events = await sanityClient.fetch(query);
   return {
     props: {
-      events
-    }
-  }
+      events,
+    },
+  };
 }
 
 export default Program;
-
-

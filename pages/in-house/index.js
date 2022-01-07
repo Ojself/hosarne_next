@@ -1,16 +1,12 @@
 import { useEffect } from "react";
-import groq from 'groq'
-import sanityClient from "../../client";
+import groq from "groq";
+import { sanityClient } from "../../sanity";
 import PhotographerPreview from "../../components/PhotographerPreview";
-import colorPalette from "../../utils/photographerPalette";
 import { changeLayOutColors } from "../../utils/helpers";
-const InHouse = ({photographers}) => {
-  const randomStart = Math.floor(Math.random() * colorPalette.length);
-
+const InHouse = ({ photographers }) => {
   useEffect(() => {
     changeLayOutColors("#fff");
   }, []);
-
   if (!photographers.length) {
     return (
       <main>
@@ -23,17 +19,14 @@ const InHouse = ({photographers}) => {
     <main className='flex flex-col items-center'>
       <div className='mt-6 flex flex-wrap w-full px-4 lg:px-0'>
         {photographers.map((photographer, i) => {
-          const colorPaletteIndex = (randomStart + i) % colorPalette.length;
           return (
             <>
               <PhotographerPreview
                 key={photographer.name}
-                backgroundColor={
-                  colorPalette[colorPaletteIndex].backgroundColor
-                }
-                color={colorPalette[colorPaletteIndex].color}
+                order={i}
+                backgroundColor='red'
+                color='blue'
                 photographer={photographer}
-                slug={""}
               />
             </>
           );
@@ -55,16 +48,15 @@ const query = groq`*[_type == "photographer"] | order(order asc){
                            },
                            alt
                        }
-                   }`
-
+                   }`;
 
 export async function getStaticProps(context) {
-  const photographers = await sanityClient.fetch(query, { })
+  const photographers = await sanityClient.fetch(query, {});
   return {
     props: {
-      photographers
-    }
-  }
+      photographers,
+    },
+  };
 }
 
 export default InHouse;

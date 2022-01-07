@@ -8,9 +8,14 @@ const Apartment = () => {
   }, []);
   return (
     <main className='font-book'>
-      <section className='flex flex-col lg:flex-row items-center justify-center'>
-        <div className='w-4/5 lg:w-5/12'>
-          <Image alt='Galleriet front' src='https://picsum.photos/600/600' />
+      <section className='flex flex-col lg:flex-row items-center justify-around h-full'>
+        <div className='w-4/5 lg:w-5/12 h-screen relative'>
+          <Image
+            layout='fill'
+            alt='Leiligheten front'
+            src='https://picsum.photos/1200/1200'
+            className='object-cover'
+          />
         </div>
         <div className='w-4/5 lg:w-5/12 flex flex-col justify-center'>
           <p className='mb-6'>

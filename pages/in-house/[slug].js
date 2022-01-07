@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import BlockContent from "@sanity/block-content-to-react";
 import groq from "groq";
-import Image from "next/image";
-import sanityClient from "../../client";
+import Image from "../../components/Image";
+import { sanityClient } from "../../sanity";
 import { changeLayOutColors } from "../../utils/helpers";
 
 function Photographer({ photographer }) {
@@ -15,25 +15,40 @@ function Photographer({ photographer }) {
   const { name, title, email, mobile, body, image, images } = photographer[0];
 
   return (
-    <div className='flex flex-col'>
-      <h1>{name}</h1>
-      <h1>{title}</h1>
-      <h1>{email}</h1>
-      <h1>{mobile}</h1>
-      <div>
-        <Image src={image.asset.url} alt={image.alt} />
-      </div>
-      <BlockContent
-        className='font-extralight'
-        blocks={body}
-        renderContainerOnSingleChild
-      />
-      <div>
+    <main className='flex flex-col mb-44'>
+      <section className='flex flex-row justify-center mb-24'>
+        <div className='w-2/5'>
+          <Image image={image} alt={image.alt} />
+        </div>
+        <div className='w-2/5'>
+          <h1>{name}</h1>
+          <h1>{title}</h1>
+          <h1>{email}</h1>
+          <h1>{mobile}</h1>
+          <BlockContent
+            className='font-extralight'
+            blocks={body}
+            renderContainerOnSingleChild
+          />
+        </div>
+      </section>
+      <section className='my-5 grid grid-cols-1 lg:grid-cols-4 gap-4 mx-4'>
         {images.map((image) => (
-          <Image src={image.asset.url} alt={image.alt} />
+          <a
+            key={image.asset.url}
+            href={image.asset.url}
+            className='hover:opacity-75'
+          >
+            <Image
+              image={image}
+              alt={image.alt}
+              className='w-full h-64 object-cover'
+            />
+            <h5>{image.title}</h5>
+          </a>
         ))}
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
 
@@ -77,7 +92,6 @@ export async function getStaticProps(context) {
   const { slug } = context.params;
   const params = { slug };
   const photographer = await sanityClient.fetch(query, params);
-  console.log({ photographer });
   return {
     props: {
       photographer,

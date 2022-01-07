@@ -15,12 +15,12 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
         <meta name='description' content='Hos Arne' />
       </Head>
-      <main>
+      <main className='relative h-screen'>
         <Image
-          style={{ width: "100vw", height: "100vh" }}
-          className='bg-black object-cover flex justify-center items-center grayscale hero'
+          className='hero bg-black object-fit flex justify-center items-center grayscale w-screen h-screen'
           src={door}
           alt='Picture of the main door'
+          layout='fill'
         />
       </main>
     </div>

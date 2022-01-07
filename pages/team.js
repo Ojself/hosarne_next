@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import groq from "groq";
-import sanityClient from "../client";
+import { sanityClient } from "../sanity";
 import TeamMember from "../components/TeamMember";
 
 import { changeLayOutColors } from "../utils/helpers";
@@ -15,10 +15,10 @@ const Team = ({ teamMembers }) => {
 
   return (
     <main className='flex flex-col items-center'>
-      <div className='mt-6 flex w-full px-2 lg:px-0 lg:w-2/3 flex-col'>
-        {teamMembers.map((teamMember) => (
-          <TeamMember key={teamMember.name} {...teamMember} />
-        ))}
+      <div className='grid-cols-1 grid gap-1 xl:gap-4 xl:grid-cols-2 xl:grid-flow-row lg:px-2'>
+        {teamMembers.map((teamMember) => {
+          return <TeamMember key={teamMember.name} {...teamMember} />;
+        })}
       </div>
     </main>
   );

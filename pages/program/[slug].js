@@ -3,15 +3,20 @@ import groq from "groq";
 import BlockContent from "@sanity/block-content-to-react";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import { AiOutlineArrowDown } from "react-icons/ai";
-import Image from "next/image";
-import sanityClient from "../../client";
+import { SocialIcon } from "react-social-icons";
+
+import Image from "../../components/Image";
+import { sanityClient } from "../../sanity";
 import { changeLayOutColors, formatDates } from "../../utils/helpers";
 
 function Event({ event }) {
+  console.log(event);
   const [scrollOpacity, setScrollOpacity] = useState(1);
   if (!event || !event.length) {
     return <div>Loading...</div>;
   }
+  const { body, timeStart, timeEnd, mainImage, title, theme, facebookUrl } =
+    event[0];
 
   const calculateOpacity = (offset) => {
     const limit = -150;
@@ -22,15 +27,12 @@ function Event({ event }) {
   useScrollPosition(({ prevPos, currPos }) => {
     setScrollOpacity(calculateOpacity(currPos.y));
   });
-
-  const backgroundColor = event.theme || "#fff";
+  const backgroundColor = theme || "#fff";
   useEffect(() => {
     changeLayOutColors(backgroundColor, true);
   }, [backgroundColor]);
 
-  const { body, timeStart, timeEnd, mainImage, title } = event[0];
-
-  const shouldRenderBody = event.body && event.body.length;
+  const shouldRenderBody = body && body.length;
   return (
     <>
       <button
@@ -45,8 +47,7 @@ function Event({ event }) {
       </button>
       <main
         style={{ backgroundColor }}
-        id='event-home'
-        className='transition duration-1000 ease-in-out px-2 lg:px-44 relative mb-64 '
+        className='transition duration-1000 ease-in-out px-2 lg:px-44 mb-64'
       >
         <section
           style={{ opacity: scrollOpacity }}
@@ -59,13 +60,25 @@ function Event({ event }) {
             {title}
           </h1>
         </section>
-        <Image
-          className='object-cover w-full h-auto mb-12'
-          src={mainImage.asset.url}
-          alt={mainImage.alt}
-        />
+        <div className='m-h-screen'>
+          <Image
+            className='object-cover w-full mb-12'
+            image={mainImage}
+            alt={title}
+          />
+        </div>
 
-        <section ref={bodyRef} id='event-description'>
+        <section ref={bodyRef}>
+          {facebookUrl && (
+            <div className='flex flex-col items-end'>
+              <SocialIcon
+                bgColor={backgroundColor}
+                fgColor='#3B5998'
+                network='facebook'
+                url={facebookUrl}
+              />
+            </div>
+          )}
           {shouldRenderBody && (
             <BlockContent
               className='font-extralight'
@@ -115,7 +128,6 @@ export async function getStaticProps(context) {
   const { slug } = context.params;
   const params = { slug };
   const event = await sanityClient.fetch(query, params);
-  console.log({ event });
   return {
     props: {
       event,

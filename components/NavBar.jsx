@@ -63,9 +63,9 @@ const NavBar = () => {
     <header id='navbar' className='bg-white h-64 relative'>
       {showExtraMenuButton && menuButton}
       <nav
-        className={`${navOpacity} transition duration-500 ease-in-out w-full flex flex-row justify-around pt-12`}
+        className={`${navOpacity} transition duration-500 ease-in-out w-full flex flex-row justify-between pt-12 `}
       >
-        <div className='flex flex-col uppercase text-sm lg:text-xl font-roman '>
+        <div className='flex flex-col uppercase text-sm lg:text-xl w-2/3 pl-12 lg:pl-20'>
           <Link className='mb-4 ' href='/'>
             <a>Hos Arne</a>
           </Link>
@@ -100,10 +100,7 @@ const NavBar = () => {
             <a>Team</a>
           </Link>
         </div>
-        <div>{/* Empty by design */}</div>
-        <div>{/* Empty by design */}</div>
-        <div id='adress' className='flex flex-col font-book text-sm lg:text-lg'>
-          <h1>Adresse:</h1>
+        <div id='adress' className='flex flex-col text-sm lg:text-lg w-1/3'>
           <address className='not-italic mb-4'>
             Gøteborggata 27B
             <br />
@@ -121,7 +118,7 @@ const NavBar = () => {
                 type='text'
                 style={{ backgroundColor: "transparent" }}
                 id='email-input'
-                className='ml-2 focus:border-green-500 outline-none border-black border-t-0 border-l-0 border-r-0 border-2 z-100'
+                className='w-3/5 lg:w-1/3 lg:ml-2 text-xs lg:text-lg focus:border-green-500 outline-none border-black border-t-0 border-l-0 border-r-0 border z-100'
                 value={email}
                 onChange={handleChange}
               />
