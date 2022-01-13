@@ -17,7 +17,7 @@ const Gallery = () => {
             className='object-cover '
           />
         </div>
-        <div className='w-4/5 lg:w-5/12 flex flex-col justify-center '>
+        <div className='w-4/5 lg:w-5/12 flex flex-col justify-center md:text-sm text-xs'>
           <p className='mb-6'>
             Galleriet Hos Arne er et unikt space som ligger åpent eksponert fra
             Leiligheten/Stuen, og vice versa. Galleriet har som et anti-konsept

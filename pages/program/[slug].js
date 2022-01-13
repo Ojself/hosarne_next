@@ -10,7 +10,6 @@ import { sanityClient } from "../../sanity";
 import { changeLayOutColors, formatDates } from "../../utils/helpers";
 
 function Event({ event }) {
-  console.log(event);
   const [scrollOpacity, setScrollOpacity] = useState(1);
   if (!event || !event.length) {
     return <div>Loading...</div>;
@@ -133,5 +132,6 @@ export async function getStaticProps(context) {
     props: {
       event,
     },
+    revalidate: 30,
   };
 }

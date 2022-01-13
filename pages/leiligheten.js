@@ -17,7 +17,7 @@ const Apartment = () => {
             className='object-cover'
           />
         </div>
-        <div className='w-4/5 lg:w-5/12 flex flex-col justify-center'>
+        <div className='w-4/5 lg:w-5/12 flex flex-col justify-center md:text-sm text-xs'>
           <p className='mb-6'>
             Hos Arne er alle velkommen Hos Arne er det en hage Folk Hos Arne har
             glød Hos Arne er det et galleri Folk Hos Arne bry seg om krig og

@@ -20,15 +20,13 @@ const InHouse = ({ photographers }) => {
       <section className='mt-6 flex flex-wrap w-full px-4 lg:px-0'>
         {photographers.map((photographer, i) => {
           return (
-            <>
-              <PhotographerPreview
-                key={photographer.name}
-                order={i}
-                backgroundColor='red'
-                color='blue'
-                photographer={photographer}
-              />
-            </>
+            <PhotographerPreview
+              key={photographer.name}
+              order={i}
+              backgroundColor='red'
+              color='blue'
+              photographer={photographer}
+            />
           );
         })}
       </section>
@@ -56,6 +54,7 @@ export async function getStaticProps(context) {
     props: {
       photographers,
     },
+    revalidate: 60,
   };
 }
 
