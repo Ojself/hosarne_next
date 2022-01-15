@@ -1,46 +1,69 @@
 import { useEffect } from "react";
-import Image from "next/image";
+import groq from "groq";
+import BlockContent from "@sanity/block-content-to-react";
+import Image from "../components/Image";
+import { sanityClient } from "../sanity";
 import { changeLayOutColors } from "../utils/helpers";
 
-const Gallery = () => {
+const Gallery = ({ gallery }) => {
+  const { body_en, body_no, image, images } = gallery;
   useEffect(() => {
     changeLayOutColors("#fff");
   }, []);
   return (
-    <main className='font-book'>
-      <section className='flex flex-col lg:flex-row items-center justify-around h-full'>
-        <div className='w-4/5 lg:w-5/12 relative h-screen '>
-          <Image
-            layout='fill'
-            alt='Galleriet front'
-            src='https://picsum.photos/1200/1200'
-            className='object-cover '
-          />
+    <main className='font-book mb-12'>
+      <section className='flex flex-col lg:flex-row justify-around m-h-screen'>
+        <div className='w-11/12 self-center lg:w-1/2 '>
+          <Image image={image} alt='Galleriet front' />
         </div>
-        <div className='w-4/5 lg:w-5/12 flex flex-col justify-center md:text-sm text-xs'>
-          <p className='mb-6'>
-            Galleriet Hos Arne er et unikt space som ligger åpent eksponert fra
-            Leiligheten/Stuen, og vice versa. Galleriet har som et anti-konsept
-            å vise samtidskunst uten satte krav, annet enn at kunsten er av
-            aktører og kunstnere som vi opplever at klarer å romme det luftige
-            lokalet på tilsammen 140 kvm. fordelt over to rom med naturlig
-            overlys fra glasstak svevende opptil 6 m. høyt. Hos Arne vil du
-            oppleve en eklektisk miks av kunst. Variert, uforutsigbart, åpent.
-          </p>
-          <p className='italic'>
-            The Gallery Hos Arne is a unique space that is openly exposed from
-            The Apartment / Living Room, and vice versa. The gallery follows an
-            anti-concept, aiming to show contemporary art without any set of
-            requirements, other than a notion that the art exhibited is done by
-            artists that we believe manages to fully house the spacious venue of
-            a total of 140 sqm. diveded into two rooms with natural skylight
-            from glass ceilings hovering up to 6 m. high. At Arne’s place you
-            will experience an eclectic mix of art. Varied, unpredictable, open.
-          </p>
+        <div className='w-11/12 flex flex-col self-center lg:self-auto lg:w-5/12 md:text-sm text-xs mt-2 lg:mt-24'>
+          <div className='w-full'>
+            <BlockContent
+              className='mb-6'
+              blocks={body_no}
+              renderContainerOnSingleChild={true}
+            />
+            <BlockContent
+              className=''
+              blocks={body_en}
+              renderContainerOnSingleChild={true}
+            />
+          </div>
         </div>
       </section>
     </main>
   );
 };
+
+const query = groq`*[_type == "gallery"] | order(timeStart asc){
+                       body_no,
+                       body_en,
+                       images[]{
+                         asset->{
+                            _id,
+                            order,
+                            url
+                         },
+                         title
+                       },
+                       image{
+                           asset->{
+                               _id,
+                               order,
+                               url
+                           },
+                           alt
+                       }
+                   }`;
+
+export async function getStaticProps(context) {
+  const data = await sanityClient.fetch(query);
+  return {
+    props: {
+      gallery: data[0],
+    },
+    revalidate: 30,
+  };
+}
 
 export default Gallery;

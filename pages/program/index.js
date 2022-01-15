@@ -31,7 +31,7 @@ const Program = ({ events }) => {
   );
 };
 
-const query = groq`*[_type == "event" && timeStart > now()] | order(timeStart asc){
+const query = groq`*[_type == "event"] | order(timeStart asc){
                        title,
                        timeStart,
                        timeEnd,

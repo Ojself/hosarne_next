@@ -1,41 +1,69 @@
 import { useEffect } from "react";
+import groq from "groq";
+import BlockContent from "@sanity/block-content-to-react";
+import Image from "../components/Image";
+import { sanityClient } from "../sanity";
 import { changeLayOutColors } from "../utils/helpers";
-import Image from "next/image";
 
-const Apartment = () => {
+const Apartment = ({ apartment }) => {
+  const { body_en, body_no, image, images } = apartment;
   useEffect(() => {
     changeLayOutColors("#fff");
   }, []);
   return (
-    <main className='font-book'>
-      <section className='flex flex-col lg:flex-row items-center justify-around h-full'>
-        <div className='w-4/5 lg:w-5/12 h-screen relative'>
-          <Image
-            layout='fill'
-            alt='Leiligheten front'
-            src='https://picsum.photos/1200/1200'
-            className='object-cover'
-          />
+    <main className='font-book mb-12'>
+      <section className='flex flex-col lg:flex-row justify-around m-h-screen'>
+        <div className='w-11/12 self-center lg:w-1/2 '>
+          <Image image={image} alt='Leiligheten front' />
         </div>
-        <div className='w-4/5 lg:w-5/12 flex flex-col justify-center md:text-sm text-xs'>
-          <p className='mb-6'>
-            Hos Arne er alle velkommen Hos Arne er det en hage Folk Hos Arne har
-            glød Hos Arne er det et galleri Folk Hos Arne bry seg om krig og
-            fred, og sånn Hos Arne er det en stue Folk Hos Arne har vi ingen
-            svar men mange spørsmål. Hos Arne kan du gjøre hva du vil så lenge
-            du er grei
-          </p>
-          <p className='italic'>
-            At Arne’s, everyone is welcome At Arne’s there is a garden People at
-            Arne’s have a glow At Arne’s there is a gallery People At Arne’s
-            care about war and peace, and such At Arne’s there is a living room
-            The people At Arne’s have no answers, but many questions. At Arne’s
-            you can do whatever you want just be nice
-          </p>
+        <div className='w-11/12 flex flex-col self-center lg:self-auto lg:w-5/12 md:text-sm text-xs mt-2 lg:mt-24'>
+          <div className='w-full'>
+            <BlockContent
+              className='mb-6'
+              blocks={body_no}
+              renderContainerOnSingleChild={true}
+            />
+            <BlockContent
+              className=''
+              blocks={body_en}
+              renderContainerOnSingleChild={true}
+            />
+          </div>
         </div>
       </section>
     </main>
   );
 };
+
+const query = groq`*[_type == "apartment"] | order(timeStart asc){
+                       body_no,
+                       body_en,
+                       images[]{
+                         asset->{
+                            _id,
+                            order,
+                            url
+                         },
+                         title
+                       },
+                       image{
+                           asset->{
+                               _id,
+                               order,
+                               url
+                           },
+                           alt
+                       }
+                   }`;
+
+export async function getStaticProps(context) {
+  const data = await sanityClient.fetch(query);
+  return {
+    props: {
+      apartment: data[0],
+    },
+    revalidate: 30,
+  };
+}
 
 export default Apartment;

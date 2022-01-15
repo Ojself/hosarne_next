@@ -42,6 +42,10 @@ const NavBar = () => {
     setLoading(false);
   };
 
+  const amIActive = (path) => {
+    return router.pathname === path;
+  };
+
   const rotatedStyle = isOpen ? "transform rotate-45" : "";
   const menuButton = (
     <div className='top-4 left-6 absolute z-10'>
@@ -66,38 +70,59 @@ const NavBar = () => {
         className={`${navOpacity} transition duration-500 ease-in-out w-full flex flex-row justify-between pt-12 `}
       >
         <div className='flex flex-col uppercase text-sm lg:text-xl w-2/3 pl-12 lg:pl-20'>
-          <Link className='mb-4 ' href='/'>
-            <a>Hos Arne</a>
+          <Link href='/'>
+            <a
+              className={`${
+                amIActive("/") ? "" : "opacity-40"
+              } hover:opacity-100 mb-2`}
+            >
+              Hos Arne
+            </a>
           </Link>
-          <Link
-            className={(isActive) => (isActive ? "" : "opacity-40")}
-            href='/leiligheten'
-          >
-            <a>Leiligheten</a>
+          <Link href='/leiligheten'>
+            <a
+              className={`${
+                amIActive("/leiligheten") ? "" : "opacity-40"
+              } hover:opacity-100`}
+            >
+              Leiligheten
+            </a>
           </Link>
-          <Link
-            className={(isActive) => (isActive ? "" : "opacity-40")}
-            href='/galleriet'
-          >
-            <a>Galleriet</a>
+          <Link href='/galleriet'>
+            <a
+              className={`${
+                amIActive("/galleriet") ? "" : "opacity-40"
+              } hover:opacity-100`}
+            >
+              Galleriet
+            </a>
           </Link>
-          <Link
-            className={(isActive) => (isActive ? "" : "opacity-40")}
-            href='/program'
-          >
-            <a>Program</a>
+          <Link href='/program'>
+            <a
+              className={`${
+                amIActive("/program") ? "" : "opacity-40"
+              } hover:opacity-100`}
+            >
+              Program
+            </a>
           </Link>
-          <Link
-            className={(isActive) => (isActive ? "" : "opacity-40")}
-            href='/in-house'
-          >
-            <a>In-House</a>
+          <Link href='/in-house'>
+            <a
+              className={`${
+                amIActive("/in-house") ? "" : "opacity-40"
+              } hover:opacity-100`}
+            >
+              In-House
+            </a>
           </Link>
-          <Link
-            className={(isActive) => (isActive ? "" : "opacity-40")}
-            href='/team'
-          >
-            <a>Team</a>
+          <Link href='/team'>
+            <a
+              className={`${
+                amIActive("/team") ? "" : "opacity-40"
+              } hover:opacity-100`}
+            >
+              Team
+            </a>
           </Link>
         </div>
         <div id='adress' className='flex flex-col text-sm lg:text-lg w-1/3'>
@@ -106,9 +131,6 @@ const NavBar = () => {
             <br />
             0566 OSLO
             <br />
-            <div>
-              <p>@hos_arne</p>
-            </div>
           </address>
 
           <form style={{ zIndex: 250 }} onSubmit={handleSubmit}>
