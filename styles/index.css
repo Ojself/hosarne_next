@@ -24,6 +24,41 @@
     url(../fonts/photographer-regularFX.woff2) format("truetype");
 }
 
+@font-face {
+  font-family: "MADEMirage-black";
+  font-display: swap;
+  src: local("MADEMirage-black"),
+    url(../fonts/MADE-Mirage-Black.otf) format("truetype");
+}
+
+@font-face {
+  font-family: "MADEMirage-bold";
+  font-display: swap;
+  src: local("MADEMirage-bold"),
+    url(../fonts/MADE-Mirage-Bold.otf) format("truetype");
+}
+
+@font-face {
+  font-family: "MADEMirage-med";
+  font-display: swap;
+  src: local("MADEMirage-med"),
+    url(../fonts/MADE-Mirage-Medium.otf) format("truetype");
+}
+
+@font-face {
+  font-family: "MADEMirage-reg";
+  font-display: swap;
+  src: local("MADEMirage-reg"),
+    url(../fonts/MADE-Mirage-Regular.otf) format("truetype");
+}
+
+@font-face {
+  font-family: "MADEMirage-thin";
+  font-display: swap;
+  src: local("MADEMirage-thin"),
+    url(../fonts/MADE-Mirage-Thin.otf) format("truetype");
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -51,6 +86,21 @@ img {
 }
 .font-photographer-fx {
   font-family: PhotographerFX, sans-serif;
+}
+.font-mirage-black {
+  font-family: MADEMirage-black;
+}
+.font-mirage-bold {
+  font-family: MADEMirage-bold;
+}
+.font-mirage-med {
+  font-family: MADEMirage-med;
+}
+.font-mirage-reg {
+  font-family: MADEMirage-reg;
+}
+.font-mirage-thin {
+  font-family: MADEMirage-thin;
 }
 
 #hos_arne-fixed {

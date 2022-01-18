@@ -13,7 +13,7 @@ function Photographer({ photographer }) {
     return <div>Loading...</div>;
   }
   const { name, title, email, mobile, body, image, images } = photographer[0];
-
+  const shouldRenderGalleryImages = images && images.length > 0;
   return (
     <main className='flex flex-col mt-20 mb-44'>
       <section className='flex flex-row justify-around mb-24'>
@@ -36,20 +36,21 @@ function Photographer({ photographer }) {
         </div>
       </section>
       <section className='my-5 grid grid-cols-1 lg:grid-cols-4 gap-4 mx-4 '>
-        {images.map((image) => (
-          <a
-            key={image.asset.url}
-            href={image.asset.url}
-            className='hover:opacity-75'
-          >
-            <Image
-              image={image}
-              alt={image.alt}
-              className='w-full h-64 object-cover'
-            />
-            <h5>{image.title}</h5>
-          </a>
-        ))}
+        {shouldRenderGalleryImages &&
+          images.map((image) => (
+            <a
+              key={image.asset.url}
+              href={image.asset.url}
+              className='hover:opacity-75'
+            >
+              <Image
+                image={image}
+                alt={image.alt}
+                className='w-full h-64 object-cover'
+              />
+              <h5>{image.title}</h5>
+            </a>
+          ))}
       </section>
     </main>
   );

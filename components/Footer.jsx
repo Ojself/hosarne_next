@@ -62,7 +62,7 @@ const Footer = () => {
           <br />
           alex@hos-arne.no
           <br />
-          +47 12345678
+          +47 93869353
         </div>
       </div>
     </footer>

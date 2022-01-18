@@ -29,7 +29,7 @@ const EventPreview = ({ somethingIsHovering, handleEventHover, event }) => {
             {formatDates(timeStart, timeEnd)}
           </h5>
           <figure>
-            <Image image={mainImage} className='' />
+            <Image image={mainImage} />
           </figure>
         </a>
       </Link>

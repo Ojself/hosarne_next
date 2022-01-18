@@ -10,6 +10,7 @@ const Apartment = ({ apartment }) => {
   useEffect(() => {
     changeLayOutColors("#fff");
   }, []);
+  const shouldRenderGalleryImages = images && images.length > 0;
   return (
     <main className='font-book mb-12'>
       <section className='flex flex-col lg:flex-row justify-around m-h-screen'>
@@ -30,6 +31,23 @@ const Apartment = ({ apartment }) => {
             />
           </div>
         </div>
+      </section>
+      <section className='my-5 grid grid-cols-1 lg:grid-cols-4 gap-4 mx-4 '>
+        {shouldRenderGalleryImages &&
+          images.map((image) => (
+            <a
+              key={image.asset.url}
+              href={image.asset.url}
+              className='hover:opacity-75'
+            >
+              <Image
+                image={image}
+                alt={image.alt}
+                className='w-full h-64 object-cover'
+              />
+              <h5>{image.title}</h5>
+            </a>
+          ))}
       </section>
     </main>
   );
