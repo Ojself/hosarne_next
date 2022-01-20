@@ -27,7 +27,7 @@ const Gallery = ({ gallery }) => {
             <div className='w-1/3'>
               <h1 className='text-xl lg:text-4xl font-mirage-reg'>Galleriet</h1>
             </div>
-            <div className='text-xs lg:text-sm'>
+            <div className='text-xs lg:text-sm flex lg:flex-col'>
               <BlockContent
                 className='mb-6'
                 blocks={body_no}

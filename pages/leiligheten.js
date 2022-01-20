@@ -29,7 +29,7 @@ const Apartment = ({ apartment }) => {
                 Leiligheten
               </h1>
             </div>
-            <div className='text-xs lg:text-sm'>
+            <div className='text-xs lg:text-sm flex lg:flex-col'>
               <BlockContent
                 className='mb-6'
                 blocks={body_no}

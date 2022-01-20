@@ -28,9 +28,7 @@ const query = groq`*[_type == 'footer']{
                    }`;
 
 export async function getStaticProps(context) {
-  console.log("hello?");
   const data = await sanityClient.fetch(query);
-  console.log(data, "data");
   return {
     props: {
       data,

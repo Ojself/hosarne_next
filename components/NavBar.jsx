@@ -130,8 +130,8 @@ const NavBar = () => {
           className='flex flex-col-reverse text-sm lg:text-lg w-1/3'
         >
           <form style={{ zIndex: 250 }} onSubmit={handleSubmit}>
-            <label className='font-thin text-sm'>
-              Nyhetsbrev: <br /> (Mail)
+            <label style={{ lineHeight: "1px" }} className='font-thin text-sm'>
+              Nyhetsbrev: <br className='' /> (Mail)
               <input
                 type='text'
                 style={{ backgroundColor: "transparent" }}
@@ -144,12 +144,21 @@ const NavBar = () => {
             {error && <p className='text-red-700'> Noe gikk galt </p>}
             <br />
           </form>
-          <address className='not-italic mb-4 font-thin text-sm'>
+          <address className='not-italic font-thin text-sm'>
             Gøteborggata 27B
             <br />
             0566 OSLO
             <br />
           </address>
+          <div className='mb-2'>
+            <p className='text-sm lg:text-base font-mirage-reg'>
+              ROM FOR KULTUR, KUNST
+            </p>
+            <p className='text-xs lg:text-sm font-mirage-reg'>
+              {" "}
+              & DET I MELLOM
+            </p>
+          </div>
         </div>
       </nav>
       <div id='hos_arne-fixed' className='font-swhong text-6xl w-56 lg:w-96'>

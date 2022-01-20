@@ -41,7 +41,6 @@ function Photographer({ photographer }) {
       <section className='my-5 grid grid-cols-1 lg:grid-cols-4 gap-4 mx-4 '>
         {shouldRenderGalleryImages &&
           images.map((image) => {
-            console.log(image);
             return (
               <a
                 key={image.asset.url}
