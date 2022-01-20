@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import groq from "groq";
+import Head from "next/head";
 import { sanityClient } from "../sanity";
 import TeamMember from "../components/TeamMember";
 

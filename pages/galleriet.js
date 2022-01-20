@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import groq from "groq";
 import BlockContent from "@sanity/block-content-to-react";
+import Head from "next/head";
 import Image from "../components/Image";
 import { sanityClient } from "../sanity";
 import { changeLayOutColors } from "../utils/helpers";
@@ -12,7 +13,7 @@ const Gallery = ({ gallery }) => {
   }, []);
   const shouldRenderGalleryImages = images && images.length > 0;
   return (
-    <main className='font-book mb-12'>
+    <main className='font-book mb-12 mt-12 lg:mt-20'>
       <section className='flex flex-col lg:flex-row justify-center h-screen'>
         <div className='w-11/12 self-center lg:w-2/5 h-full'>
           <Image

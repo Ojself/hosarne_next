@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import groq from "groq";
+import Head from "next/head";
 import BlockContent from "@sanity/block-content-to-react";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import { AiOutlineArrowDown } from "react-icons/ai";

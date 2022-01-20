@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import groq from "groq";
+import Head from "next/head";
 import { sanityClient } from "../../sanity";
 import EventPreview from "../../components/EventPreview";
 import { changeLayOutColors } from "../../utils/helpers";
