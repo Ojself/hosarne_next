@@ -126,7 +126,7 @@ const NavBar = () => {
           </Link>
         </div>
         <div id='adress' className='flex flex-col text-sm lg:text-lg w-1/3'>
-          <address className='not-italic mb-4 font-thin'>
+          <address className='not-italic mb-4 font-thin text-sm'>
             Gøteborggata 27B
             <br />
             0566 OSLO
@@ -134,7 +134,7 @@ const NavBar = () => {
           </address>
 
           <form style={{ zIndex: 250 }} onSubmit={handleSubmit}>
-            <label className='font-thin'>
+            <label className='font-thin text-sm'>
               Nyhetsbrev: <br /> (Mail)
               <input
                 type='text'
