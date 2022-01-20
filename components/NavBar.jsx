@@ -63,6 +63,7 @@ const NavBar = () => {
     </div>
   );
   const navOpacity = isOpen ? "opacity-100" : "opacity-0";
+
   return (
     <header id='navbar' className='bg-white h-64 relative'>
       {showExtraMenuButton && menuButton}
@@ -74,16 +75,25 @@ const NavBar = () => {
             <a
               className={`${
                 amIActive("/") ? "" : "opacity-40"
-              } hover:opacity-100 mb-2`}
+              } hover:opacity-100 font-mirage-reg mb-2`}
             >
               Hos Arne
+            </a>
+          </Link>
+          <Link href='/program'>
+            <a
+              className={`${
+                amIActive("/program") ? "" : "opacity-40"
+              } hover:opacity-100 font-mirage-reg`}
+            >
+              Program
             </a>
           </Link>
           <Link href='/leiligheten'>
             <a
               className={`${
                 amIActive("/leiligheten") ? "" : "opacity-40"
-              } hover:opacity-100`}
+              } hover:opacity-100 font-mirage-reg`}
             >
               Leiligheten
             </a>
@@ -92,25 +102,16 @@ const NavBar = () => {
             <a
               className={`${
                 amIActive("/galleriet") ? "" : "opacity-40"
-              } hover:opacity-100`}
+              } hover:opacity-100 font-mirage-reg`}
             >
               Galleriet
-            </a>
-          </Link>
-          <Link href='/program'>
-            <a
-              className={`${
-                amIActive("/program") ? "" : "opacity-40"
-              } hover:opacity-100`}
-            >
-              Program
             </a>
           </Link>
           <Link href='/in-house'>
             <a
               className={`${
                 amIActive("/in-house") ? "" : "opacity-40"
-              } hover:opacity-100`}
+              } hover:opacity-100 font-mirage-reg`}
             >
               In-House
             </a>
@@ -119,7 +120,7 @@ const NavBar = () => {
             <a
               className={`${
                 amIActive("/team") ? "" : "opacity-40"
-              } hover:opacity-100`}
+              } hover:opacity-100 font-mirage-reg`}
             >
               Team
             </a>
