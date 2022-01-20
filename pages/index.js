@@ -15,13 +15,12 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
         <meta name='description' content='Hos Arne' />
       </Head>
-      <main className='relative h-screen'>
+      <main className='border border-red-500 hero'>
         <Image
-          className='hero bg-black grayscale m-w-screen m-h-screen'
+          className='bg-black grayscale'
           src={door}
           priority={true}
-          layout='fill'
-          objectFit='cover'
+          layout='responsive'
           alt='Picture of the main door'
         />
       </main>
