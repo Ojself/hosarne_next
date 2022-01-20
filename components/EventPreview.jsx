@@ -24,7 +24,7 @@ const EventPreview = ({ somethingIsHovering, handleEventHover, event }) => {
     >
       <Link href={`/program/${slug.current}`}>
         <a className='flex flex-col font-book'>
-          <h1 className='text-xl lg:text-3xl'>{title}</h1>
+          <h1 className='text-xl lg:text-3xl font-mirage-reg'>{title}</h1>
           <h5 className='text-xs lg:text-base'>
             {formatDates(timeStart, timeEnd)}
           </h5>

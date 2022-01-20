@@ -14,7 +14,6 @@ const InHouse = ({ photographers }) => {
       </main>
     );
   }
-
   return (
     <main className='flex flex-col items-center mb-32'>
       <section className='mt-6 flex flex-wrap w-full px-4 lg:px-0'>

@@ -10,7 +10,6 @@ import { sanityClient } from "../../sanity";
 import { changeLayOutColors, formatDates } from "../../utils/helpers";
 
 function Event({ event }) {
-  console.log(event, "event");
   const [scrollOpacity, setScrollOpacity] = useState(1);
   if (!event || !event.length) {
     return <div>Loading...</div>;
@@ -48,22 +47,20 @@ function Event({ event }) {
       </button>
       <main className='flex flex-col mt-20 mb-44'>
         <section className='flex flex-row justify-around mb-24'>
-          <div className='w-1/3'>
-            <h1 className='text-6xl'>{title}</h1>
-            <h1 className='text-xl'>{title}</h1>
-            <h1 className='text-sm'>
-              <a href={`mailto:${"email"}`}>{"email"}</a>
-            </h1>
-            <h1 className='text-sm'>{"mobile"}</h1>
-            <hr className='my-4 w-1/6 border-2 border-black' />
-            <BlockContent
-              className='font-extralight'
-              blocks={body}
-              renderContainerOnSingleChild
-            />
+          <div className='w-2/5 flex justify-center'>
+            <Image image={mainImage} alt={mainImage.alt} />
           </div>
           <div className='w-2/5'>
-            <Image image={mainImage} alt={mainImage.alt} />
+            <h1 className='text-6xl font-mirage-reg'>{title}</h1>
+            <h1 className='text-xl'>{formatDates(timeStart, timeEnd)}</h1>
+            <hr className='my-4 w-1/6 border-2 border-black' />
+            {shouldRenderBody && (
+              <BlockContent
+                className='font-extralight'
+                blocks={body}
+                renderContainerOnSingleChild
+              />
+            )}
           </div>
         </section>
         <section className='my-5 grid grid-cols-1 lg:grid-cols-4 gap-4 mx-4 '>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import BlockContent from "@sanity/block-content-to-react";
 
 const TeamMember = ({ name, title, email, mobile, body, image }) => {
+  const shouldRenderBody = body && body.length > 0;
   return (
     <div className='flex flex-col lg:flex-row h-auto w-100 my-6'>
       <div className='w-full lg:w-1/3'>
@@ -19,11 +20,13 @@ const TeamMember = ({ name, title, email, mobile, body, image }) => {
         <p className='text-base lg:text-lg mb-4'>{title}</p>
         <p>{email}</p>
         <p className='mb-4'>{mobile}</p>
-        <BlockContent
-          className=''
-          blocks={body}
-          renderContainerOnSingleChild={true}
-        />
+        {shouldRenderBody && (
+          <BlockContent
+            className=''
+            blocks={body}
+            renderContainerOnSingleChild={true}
+          />
+        )}
       </div>
     </div>
   );

@@ -58,7 +58,7 @@ const Footer = () => {
           <br />
         </div>
         <div className='text-sm mb-2'>
-          Alex / Åndelig veileder
+          Alex / Veileder
           <br />
           alex@hos-arne.no
           <br />
