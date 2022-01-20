@@ -5,5 +5,6 @@ module.exports = {
   },
   images: {
     domains: ["cdn.sanity.io", "picsum.photos"],
+    formats: ["image/avif", "image/webp", "image/jpeg", "image/png"],
   },
 };

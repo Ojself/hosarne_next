@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useEffect } from "react";
 import { changeLayOutColors } from "../utils/helpers";
 import Image from "next/image";
-import door from "../imgs/door.webp";
+import door from "../imgs/door.jpeg";
 
 export default function Home() {
   useEffect(() => {
