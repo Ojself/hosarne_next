@@ -36,6 +36,11 @@ function Event({ event }) {
   const shouldRenderBody = body && body.length;
   return (
     <>
+      <Head>
+        <title>Hos Arne - {title || ""}</title>
+        <link rel='icon' href='/favicon.ico' />
+        <meta name='description' content={`Hos Arne - ${title}`} />
+      </Head>
       <button
         style={{ opacity: scrollOpacity }}
         onClick={() => {

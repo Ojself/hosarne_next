@@ -15,13 +15,20 @@ const Team = ({ teamMembers }) => {
   }, []);
 
   return (
-    <main className='flex flex-col items-center'>
-      <div className='w-11/12 grid-cols-1 grid gap-1 xl:gap-4 xl:grid-cols-2 xl:grid-flow-row lg:px-2'>
-        {teamMembers.map((teamMember) => {
-          return <TeamMember key={teamMember.name} {...teamMember} />;
-        })}
-      </div>
-    </main>
+    <>
+      <Head>
+        <title>Hos Arne - Team</title>
+        <link rel='icon' href='/favicon.ico' />
+        <meta name='description' content='Hos Arne - Team' />
+      </Head>
+      <main className='flex flex-col items-center'>
+        <div className='w-11/12 grid-cols-1 grid gap-1 xl:gap-4 xl:grid-cols-2 xl:grid-flow-row lg:px-2'>
+          {teamMembers.map((teamMember) => {
+            return <TeamMember key={teamMember.name} {...teamMember} />;
+          })}
+        </div>
+      </main>
+    </>
   );
 };
 

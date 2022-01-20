@@ -13,60 +13,69 @@ const Gallery = ({ gallery }) => {
   }, []);
   const shouldRenderGalleryImages = images && images.length > 0;
   return (
-    <main className='font-book mb-12 mt-12 lg:mt-20'>
-      <section className='flex flex-col lg:flex-row justify-center h-screen'>
-        <div className='w-11/12 self-center lg:w-2/5 h-full'>
-          <Image
-            className='object-cover h-full w-full'
-            image={image}
-            alt='Galleriet front'
-          />
-        </div>
-        <div className='w-11/12 flex flex-col lg:self-auto lg:w-1/2 md:text-sm text-xs ml-6'>
-          <hr className='lg:block hidden w-3/4 border-black border-1' />
-          <div className='flex flex-col lg:flex-row mt-6'>
-            <div className='w-1/3'>
-              <h1 className='text-xl lg:text-4xl font-mirage-reg'>Galleriet</h1>
-            </div>
-            <div className='text-xs lg:text-sm flex lg:flex-col'>
-              <BlockContent
-                className='mb-6'
-                blocks={body_no}
-                renderContainerOnSingleChild={true}
-              />
-              <BlockContent
-                className='text-xs'
-                blocks={body_en}
-                renderContainerOnSingleChild={true}
-              />
+    <>
+      <Head>
+        <title>Hos Arne - Galleriet</title>
+        <link rel='icon' href='/favicon.ico' />
+        <meta name='description' content={`Hos Arne - Galleriet`} />
+      </Head>
+      <main className='font-book mb-12 mt-12 lg:mt-20'>
+        <section className='flex flex-col lg:flex-row justify-center h-screen'>
+          <div className='w-11/12 self-center lg:w-2/5 h-full'>
+            <Image
+              className='object-cover h-full w-full'
+              image={image}
+              alt='Galleriet front'
+            />
+          </div>
+          <div className='w-11/12 flex flex-col lg:self-auto lg:w-1/2 md:text-sm text-xs ml-6'>
+            <hr className='lg:block hidden w-3/4 border-black border-1' />
+            <div className='flex flex-col lg:flex-row mt-6'>
+              <div className='w-1/3'>
+                <h1 className='text-xl lg:text-4xl font-mirage-reg'>
+                  Galleriet
+                </h1>
+              </div>
+              <div className='text-xs lg:text-sm flex lg:flex-col'>
+                <BlockContent
+                  className='mb-6'
+                  blocks={body_no}
+                  renderContainerOnSingleChild={true}
+                />
+                <BlockContent
+                  className='text-xs'
+                  blocks={body_en}
+                  renderContainerOnSingleChild={true}
+                />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section className='mt-24'>
-        {shouldRenderGalleryImages && (
-          <>
-            <h1 className='text-xl lg:text-4xl'>Fra Galleriet</h1>
-            <div className='my-5 grid grid-cols-1 lg:grid-cols-4 gap-4 mx-4 '>
-              {images.map((image) => (
-                <a
-                  key={image.asset.url}
-                  href={image.asset.url}
-                  className='hover:opacity-75'
-                >
-                  <Image
-                    image={image}
-                    alt={image.alt}
-                    className='w-full h-full object-contain'
-                  />
-                  <h5>{image.title}</h5>
-                </a>
-              ))}
-            </div>
-          </>
-        )}
-      </section>
-    </main>
+        </section>
+        <section className='mt-24'>
+          {shouldRenderGalleryImages && (
+            <>
+              <h1 className='text-xl lg:text-4xl'>Fra Galleriet</h1>
+              <div className='my-5 grid grid-cols-1 lg:grid-cols-4 gap-4 mx-4 '>
+                {images.map((image) => (
+                  <a
+                    key={image.asset.url}
+                    href={image.asset.url}
+                    className='hover:opacity-75'
+                  >
+                    <Image
+                      image={image}
+                      alt={image.alt}
+                      className='w-full h-full object-contain'
+                    />
+                    <h5>{image.title}</h5>
+                  </a>
+                ))}
+              </div>
+            </>
+          )}
+        </section>
+      </main>
+    </>
   );
 };
 const query = groq`*[_type == "gallery"] | order(timeStart asc){
