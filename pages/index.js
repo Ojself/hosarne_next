@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useEffect } from "react";
 import { changeLayOutColors } from "../utils/helpers";
 import Image from "next/image";
-import door from "../imgs/door.jpeg";
+import door from "../imgs/door2.jpeg";
 
 export default function Home() {
   useEffect(() => {
@@ -15,7 +15,7 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
         <meta name='description' content='Hos Arne' />
       </Head>
-      <main className='border border-red-500 hero'>
+      <main className='hero'>
         <Image
           className='bg-black grayscale'
           src={door}
