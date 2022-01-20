@@ -125,14 +125,10 @@ const NavBar = () => {
             </a>
           </Link>
         </div>
-        <div id='adress' className='flex flex-col text-sm lg:text-lg w-1/3'>
-          <address className='not-italic mb-4 font-thin text-sm'>
-            Gøteborggata 27B
-            <br />
-            0566 OSLO
-            <br />
-          </address>
-
+        <div
+          id='adress'
+          className='flex flex-col-reverse text-sm lg:text-lg w-1/3'
+        >
           <form style={{ zIndex: 250 }} onSubmit={handleSubmit}>
             <label className='font-thin text-sm'>
               Nyhetsbrev: <br /> (Mail)
@@ -148,6 +144,12 @@ const NavBar = () => {
             {error && <p className='text-red-700'> Noe gikk galt </p>}
             <br />
           </form>
+          <address className='not-italic mb-4 font-thin text-sm'>
+            Gøteborggata 27B
+            <br />
+            0566 OSLO
+            <br />
+          </address>
         </div>
       </nav>
       <div id='hos_arne-fixed' className='font-swhong text-6xl w-56 lg:w-96'>
