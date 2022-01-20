@@ -63,7 +63,6 @@ const NavBar = () => {
     </div>
   );
   const navOpacity = isOpen ? "opacity-100" : "opacity-0";
-
   return (
     <header id='navbar' className='bg-white h-64 relative'>
       {showExtraMenuButton && menuButton}
@@ -127,7 +126,7 @@ const NavBar = () => {
           </Link>
         </div>
         <div id='adress' className='flex flex-col text-sm lg:text-lg w-1/3'>
-          <address className='not-italic mb-4'>
+          <address className='not-italic mb-4 font-thin'>
             Gøteborggata 27B
             <br />
             0566 OSLO
@@ -135,7 +134,7 @@ const NavBar = () => {
           </address>
 
           <form style={{ zIndex: 250 }} onSubmit={handleSubmit}>
-            <label>
+            <label className='font-thin'>
               Nyhetsbrev: <br /> (Mail)
               <input
                 type='text'

@@ -19,15 +19,17 @@ const Wrapper = ({ slug, component }) => {
 
 const PhotographerPreview = ({ order, photographer }) => {
   const [hovering, setHovering] = useState(false);
+
   const { name, title, slug, image } = photographer;
   const defaultFontClassName = `${getFontSize(name)} uppercase break-words`;
+
   const scaleStyle = hovering ? "scale-105" : "scale-100";
   const component = (
     <a
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
       style={{ height: "32rem" }}
-      className={`flex flex-col w-full md:w-80 my-8 transform transition duration-700 ease-in-out bg-black text-white`}
+      className={`flex flex-col w-full md:w-80 my-8 mx-auto transform transition duration-700 ease-in-out bg-black text-white`}
     >
       <div className='h-1/2 overflow-hidden'>
         <Image

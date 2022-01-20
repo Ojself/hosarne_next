@@ -45,25 +45,33 @@ function Event({ event }) {
       >
         <AiOutlineArrowDown />
       </button>
-      <main className='flex flex-col mt-20 mb-44'>
-        <section className='flex flex-row justify-around mb-24'>
-          <div className='w-2/5 flex justify-center'>
-            <Image image={mainImage} alt={mainImage.alt} />
+      <main className='flex flex-col mt-20 mb-44 mx-1 lg:mx-0'>
+        <section className='flex flex-col lg:flex-row justify-around mb-24'>
+          <div className='w-full lg:w-2/5 flex justify-center'>
+            <Image
+              className='object-contain w-full h-full'
+              image={mainImage}
+              alt={mainImage.alt}
+            />
           </div>
-          <div className='w-2/5'>
+          <div className='w-full lg:w-2/5'>
             <h1 className='text-6xl font-mirage-reg'>{title}</h1>
             <h1 className='text-xl'>{formatDates(timeStart, timeEnd)}</h1>
             <hr className='my-4 w-1/6 border-2 border-black' />
+
             {shouldRenderBody && (
               <BlockContent
-                className='font-extralight'
+                className='font-extralight lg:w-4/5'
                 blocks={body}
                 renderContainerOnSingleChild
               />
             )}
           </div>
         </section>
-        <section className='my-5 grid grid-cols-1 lg:grid-cols-4 gap-4 mx-4 '>
+        <section
+          ref={bodyRef}
+          className='my-5 grid grid-cols-1 lg:grid-cols-4 gap-4 mx-4 '
+        >
           {shouldRenderGalleryImages &&
             images.map((image) => (
               <a
