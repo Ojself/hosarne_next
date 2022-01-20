@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useEffect } from "react";
 import { changeLayOutColors } from "../utils/helpers";
 import Image from "next/image";
-import door from "../imgs/door2.jpeg";
+import door from "../imgs/door.webp";
 
 export default function Home() {
   useEffect(() => {
@@ -15,13 +15,12 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
         <meta name='description' content='Hos Arne' />
       </Head>
-      <main className='hero'>
+      <main className='relative h-screen'>
         <Image
-          className='bg-black grayscale'
+          className='hero bg-black object-cover grayscale w-screen h-screen'
           src={door}
-          priority={true}
-          layout='responsive'
           alt='Picture of the main door'
+          layout='fill'
         />
       </main>
     </div>

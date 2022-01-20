@@ -154,7 +154,7 @@ const NavBar = () => {
             <p className='text-sm lg:text-base font-mirage-reg'>
               ROM FOR KULTUR, KUNST
             </p>
-            <p className='text-xs lg:text-sm font-mirage-reg'>
+            <p className='text-sm lg:text-base font-mirage-reg'>
               {" "}
               & DET I MELLOM
             </p>

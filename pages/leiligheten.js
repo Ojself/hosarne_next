@@ -58,6 +58,7 @@ const Apartment = ({ apartment }) => {
                   <Image
                     image={image}
                     alt={image.alt}
+                    objectFit='cover'
                     className='w-full h-full object-contain'
                   />
                   <h5>{image.title}</h5>

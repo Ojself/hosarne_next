@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Head from "next/head";
 import groq from "groq";
 import { sanityClient } from "../../sanity";
 import EventPreview from "../../components/EventPreview";
@@ -16,18 +17,25 @@ const Program = ({ events }) => {
     setTheme(theme);
   };
   return (
-    <main id='events-home' className='text-white'>
-      <section className='flex flex-wrap mt-12 lg:mt-20 lg:mb-32'>
-        {events.map((event) => (
-          <EventPreview
-            key={event.title}
-            handleEventHover={handleEventHover}
-            somethingIsHovering={somethingIsHovering}
-            event={event}
-          />
-        ))}
-      </section>
-    </main>
+    <>
+      <Head>
+        <title>Hos Arne - Program</title>
+        <link rel='icon' href='/favicon.ico' />
+        <meta name='description' content='Hos Arne - Program' />
+      </Head>
+      <main id='events-home' className='text-white'>
+        <section className='flex flex-wrap mt-12 lg:mt-20 lg:mb-32'>
+          {events.map((event) => (
+            <EventPreview
+              key={event.title}
+              handleEventHover={handleEventHover}
+              somethingIsHovering={somethingIsHovering}
+              event={event}
+            />
+          ))}
+        </section>
+      </main>
+    </>
   );
 };
 
