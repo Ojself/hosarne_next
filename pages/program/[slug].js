@@ -45,7 +45,7 @@ function Event({ event }) {
       >
         <AiOutlineArrowDown />
       </button>
-      <main className='flex flex-col mt-20 mb-44 mx-1 lg:mx-0'>
+      <main className='flex flex-col mt-0 lg:mt-20 mb-44 mx-1 lg:mx-0'>
         <section className='flex flex-col lg:flex-row justify-around mb-24'>
           <div className='w-full lg:w-2/5 flex justify-center'>
             <Image
@@ -55,7 +55,7 @@ function Event({ event }) {
             />
           </div>
           <div className='w-full lg:w-2/5'>
-            <h1 className='text-6xl font-mirage-reg'>{title}</h1>
+            <h1 className='text-6xl mt-2 lg:mt-0 font-mirage-reg'>{title}</h1>
             <h1 className='text-xl'>{formatDates(timeStart, timeEnd)}</h1>
             <hr className='my-4 w-1/6 border-2 border-black' />
 
