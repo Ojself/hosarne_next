@@ -152,9 +152,9 @@ export async function getStaticProps(context) {
         style={{ opacity: scrollOpacity }}
         className='h-44 lg:h-96 sticky top-64'
       >
-        <h5 className='text-lg lg:text-3xl text-center font-thin'>
+        <h1 className='text-lg lg:text-3xl text-center font-thin'>
           {formatDates(timeStart, timeEnd)}
-        </h5>
+        </h1>
         <h1 className='text-3xl lg:text-6xl text-center font-extralight'>
           {title}
         </h1>

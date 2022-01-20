@@ -22,9 +22,9 @@ const TeamMember = ({ name, title, email, mobile, body, image }) => {
         />
       </div>
       <div className='w-full pl-2 lg:w-1/3 flex flex-col justify-center '>
-        <h5 className='text-base lg:text-lg w-full font-mirage-med'>
+        <h1 className='text-base lg:text-lg w-full font-mirage-med'>
           {tempName}
-        </h5>
+        </h1>
         <p className='text-sm lg:text-base mb-4'>{title}</p>
         <p className='text-xs'>{email}</p>
         <p className='text-xs mb-4'>{mobile}</p>
