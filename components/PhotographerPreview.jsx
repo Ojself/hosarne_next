@@ -29,7 +29,7 @@ const PhotographerPreview = ({ order, photographer }) => {
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
       style={{ height: "32rem" }}
-      className={`flex flex-col w-full md:w-80 my-8 mx-auto transform transition duration-700 ease-in-out bg-black text-white`}
+      className={`flex flex-col w-full md:w-80 my-8 transform transition duration-700 ease-in-out bg-black text-white`}
     >
       <div className='h-1/2 overflow-hidden'>
         <Image
