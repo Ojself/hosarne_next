@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Head from "next/head";
 import groq from "groq";
 import Head from "next/head";
 import { sanityClient } from "../../sanity";
