@@ -23,7 +23,7 @@ const Apartment = ({ apartment }) => {
         </div>
         <div className='w-11/12 flex flex-col lg:self-auto lg:w-1/2 md:text-sm text-xs ml-6'>
           <hr className='lg:block hidden w-3/4 border-black border-1' />
-          <div className='flex flex-row mt-6'>
+          <div className='flex flex-col lg:flex-row mt-6'>
             <div className='w-1/3'>
               <h1 className='text-xl lg:text-4xl font-mirage-reg'>
                 Leiligheten
