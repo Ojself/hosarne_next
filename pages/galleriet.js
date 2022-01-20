@@ -34,7 +34,7 @@ const Gallery = ({ gallery }) => {
                 renderContainerOnSingleChild={true}
               />
               <BlockContent
-                className='text-xxs'
+                className='text-xs'
                 blocks={body_en}
                 renderContainerOnSingleChild={true}
               />
