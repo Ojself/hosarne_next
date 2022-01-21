@@ -19,8 +19,8 @@ const Gallery = ({ gallery }) => {
         <link rel='icon' href='/favicon.ico' />
         <meta name='description' content={`Hos Arne - Galleriet`} />
       </Head>
-      <main className='font-book mb-12 mt-12 lg:mt-20'>
-        <section className='flex flex-col lg:flex-row justify-center h-screen'>
+      <main className='font-book mb-12 mt-12 lg:mt-20 '>
+        <section className='flex flex-col lg:flex-row justify-center m-h-screen'>
           <div className='w-11/12 self-center lg:w-2/5 h-full'>
             <Image
               className='object-cover h-full w-full'
@@ -39,7 +39,7 @@ const Gallery = ({ gallery }) => {
                   Galleriet
                 </h1>
               </div>
-              <div className='text-xs lg:text-sm flex lg:flex-col'>
+              <div className='text-xs lg:text-sm flex flex-col'>
                 <BlockContent
                   className='mb-6'
                   blocks={body_no}
