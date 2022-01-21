@@ -1,0 +1,6 @@
+Sitemap: https://www.hosarne.no/api/sitemap
+
+User-agent: *
+Allow: /*
+
+Disallow: /api/*
