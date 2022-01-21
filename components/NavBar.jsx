@@ -69,7 +69,7 @@ const NavBar = () => {
       <nav
         className={`${navOpacity} transition duration-500 ease-in-out w-full flex flex-row justify-between pt-12 `}
       >
-        <div className='flex flex-col uppercase text-sm lg:text-xl w-2/3 pl-12 lg:pl-20'>
+        <div className='flex flex-col uppercase text-sm lg:text-xl w-1/3 lg:w-2/3 pl-12 lg:pl-20'>
           <Link href='/'>
             <a
               className={`${
@@ -127,16 +127,19 @@ const NavBar = () => {
         </div>
         <div
           id='adress'
-          className='flex flex-col-reverse text-sm lg:text-lg w-1/3'
+          className='flex flex-col-reverse text-sm lg:text-lg w-2/5 lg:w-1/3'
         >
           <form style={{ zIndex: 250 }} onSubmit={handleSubmit}>
-            <label style={{ lineHeight: "1px" }} className='font-thin text-sm'>
+            <label
+              style={{ lineHeight: "1px" }}
+              className='font-thin text:xs lg:text-sm'
+            >
               Nyhetsbrev: <br className='' /> (Mail)
               <input
                 type='text'
                 style={{ backgroundColor: "transparent" }}
                 id='email-input'
-                className='w-3/5 lg:w-1/3 lg:ml-2 text-xs lg:text-lg focus:border-green-500 outline-none border-black border-t-0 border-l-0 border-r-0 border z-100'
+                className='w-3/7 lg:w-1/3 lg:ml-2 text-xs lg:text-lg focus:border-green-500 outline-none border-black border-t-0 border-l-0 border-r-0 border z-100'
                 value={email}
                 onChange={handleChange}
               />
@@ -144,17 +147,17 @@ const NavBar = () => {
             {error && <p className='text-red-700'> Noe gikk galt </p>}
             <br />
           </form>
-          <address className='not-italic font-thin text-sm'>
+          <address className='not-italic font-thin text-xs lg:text-sm'>
             Gøteborggata 27B
             <br />
             0566 OSLO
             <br />
           </address>
           <div className='mb-2'>
-            <p className='text-sm lg:text-base font-mirage-reg'>
+            <p className='text-xs lg:text-sm font-mirage-reg'>
               ROM FOR KULTUR, KUNST
             </p>
-            <p className='text-sm lg:text-base font-mirage-reg'>
+            <p className='text-xs lg:text-sm font-mirage-reg'>
               {" "}
               & DET I MELLOM
             </p>
