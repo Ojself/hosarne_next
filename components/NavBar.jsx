@@ -127,7 +127,7 @@ const NavBar = () => {
         </div>
         <div
           id='adress'
-          className='flex flex-col-reverse text-sm lg:text-lg w-2/5 lg:w-1/3'
+          className='flex flex-col-reverse text-sm lg:text-lg w-1/2 lg:w-1/3'
         >
           <form style={{ zIndex: 250 }} onSubmit={handleSubmit}>
             <label
