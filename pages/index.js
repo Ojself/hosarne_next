@@ -14,6 +14,10 @@ export default function Home() {
         <title>Hos Arne</title>
         <link rel='icon' href='/favicon.ico' />
         <meta name='description' content='Hos Arne' />
+        <meta
+          name='google-site-verification'
+          content='tW3X2_iONIAldmxI26-Kp2B-GbImOFNsYDBLHANoP7E'
+        />
       </Head>
       <main className='relative h-screen'>
         <Image
