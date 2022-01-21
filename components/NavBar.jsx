@@ -67,7 +67,7 @@ const NavBar = () => {
     <header id='navbar' className='bg-white h-64 relative'>
       {showExtraMenuButton && menuButton}
       <nav
-        className={`${navOpacity} transition duration-500 ease-in-out w-full flex flex-row justify-between pt-12 `}
+        className={`${navOpacity} transition duration-500 ease-in-out w-full flex flex-row justify-between pt-12`}
       >
         <div className='flex flex-col uppercase text-sm lg:text-xl w-1/3 lg:w-2/3 pl-12 lg:pl-20'>
           <Link href='/'>
@@ -139,7 +139,7 @@ const NavBar = () => {
                 type='text'
                 style={{ backgroundColor: "transparent" }}
                 id='email-input'
-                className='w-3/7 lg:w-1/3 lg:ml-2 text-xs lg:text-lg focus:border-green-500 outline-none border-black border-t-0 border-l-0 border-r-0 border z-100'
+                className='w-1/4 lg:w-1/3 lg:ml-2 text-xs lg:text-lg focus:border-green-500 outline-none border-black border-t-0 border-l-0 border-r-0 border z-100'
                 value={email}
                 onChange={handleChange}
               />
