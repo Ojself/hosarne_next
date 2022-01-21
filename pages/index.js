@@ -8,7 +8,7 @@ export default function Home() {
   useEffect(() => {
     changeLayOutColors("#fff");
   }, []);
-  return (
+  return ( 
     <div>
       <Head>
         <title>Hos Arne</title>

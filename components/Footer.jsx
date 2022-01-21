@@ -47,7 +47,7 @@ const Footer = () => {
         <div className='text-sm mb-2'>
           MK / Daglig leder <br />
           mk@hos-arne.no <br />
-          +47 12345678 <br />
+          +47 41259913 <br />
         </div>
         <div className='text-sm mb-2'>
           Cat / Gallerist & kurator
