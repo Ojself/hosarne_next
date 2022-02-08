@@ -60,7 +60,7 @@ function Event({ event }) {
               alt={mainImage.alt}
             />
           </div>
-          <div className='w-full lg:w-2/5 '>
+          <div className='w-full px-4 lg:w-2/5 '>
             <h1
               lang='no'
               className='hyphens text-6xl mt-2 lg:mt-0 lg:text-5xl xl:text-6xl font-mirage-reg '
