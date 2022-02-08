@@ -60,9 +60,14 @@ function Event({ event }) {
               alt={mainImage.alt}
             />
           </div>
-          <div className='w-full lg:w-2/5'>
-            <h1 className='text-6xl mt-2 lg:mt-0 font-mirage-reg'>{title}</h1>
-            <h1 className='text-xl'>{formatDates(timeStart, timeEnd)}</h1>
+          <div className='w-full lg:w-2/5 '>
+            <h1
+              lang='no'
+              className='hyphens text-6xl mt-2 lg:mt-0 lg:text-5xl xl:text-6xl font-mirage-reg '
+            >
+              {title}
+            </h1>
+            <h2 className='text-xl'>{formatDates(timeStart, timeEnd)}</h2>
             <hr className='my-4 w-1/6 border-2 border-black' />
 
             {shouldRenderBody && (
