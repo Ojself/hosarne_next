@@ -8,6 +8,8 @@ import { changeLayOutColors } from "../utils/helpers";
 
 const Gallery = ({ gallery }) => {
   const { body_en, body_no, image, images } = gallery;
+  const shouldRenderBodyNo = body_no && body_no.length > 0;
+  const shouldRenderBodyEn = body_en && body_en.length > 0;
   useEffect(() => {
     changeLayOutColors("#fff");
   }, []);
@@ -40,16 +42,20 @@ const Gallery = ({ gallery }) => {
                 </h1>
               </div>
               <div className='text-xs lg:text-sm flex flex-col'>
-                <PortableText
-                  className='mb-6'
-                  blocks={body_no}
-                  renderContainerOnSingleChild={true}
-                />
-                <PortableText
-                  className='text-xs'
-                  blocks={body_en}
-                  renderContainerOnSingleChild={true}
-                />
+                {shouldRenderBodyNo && (
+                  <PortableText
+                    className='mb-6'
+                    content={body_no}
+                    renderContainerOnSingleChild={true}
+                  />
+                )}
+                {shouldRenderBodyEn && (
+                  <PortableText
+                    className='text-xs'
+                    content={body_en}
+                    renderContainerOnSingleChild={true}
+                  />
+                )}
               </div>
             </div>
           </div>
