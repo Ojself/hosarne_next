@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import BlockContent from "@sanity/block-content-to-react";
+import PortableText from "react-portable-text";
 import groq from "groq";
 import Head from "next/head";
 import Image from "../../components/Image";
@@ -34,9 +34,9 @@ function Photographer({ photographer }) {
             <h1 className='text-sm'>{mobile}</h1>
             <hr className='my-4 w-1/6 border-2 border-black' />
             {shouldRenderBody && (
-              <BlockContent
+              <PortableText
                 className='font-extralight'
-                blocks={body}
+                content={body}
                 renderContainerOnSingleChild
               />
             )}

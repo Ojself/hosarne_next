@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import groq from "groq";
 import Head from "next/head";
-import BlockContent from "@sanity/block-content-to-react";
+import PortableText from "react-portable-text";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import { AiOutlineArrowDown } from "react-icons/ai";
 /* import { SocialIcon } from "react-social-icons"; */
@@ -15,6 +15,7 @@ function Event({ event }) {
   if (!event || !event.length) {
     return <div>Loading...</div>;
   }
+  console.log(event);
   const { body, timeStart, timeEnd, mainImage, title, theme, images } =
     event[0];
   const shouldRenderGalleryImages = images && images.length > 0;
@@ -34,6 +35,7 @@ function Event({ event }) {
   }, [backgroundColor]);
 
   const shouldRenderBody = body && body.length;
+  console.log(body);
   return (
     <>
       <Head>
@@ -66,9 +68,9 @@ function Event({ event }) {
             <hr className='my-4 w-1/6 border-2 border-black' />
 
             {shouldRenderBody && (
-              <BlockContent
+              <PortableText
                 className='font-extralight lg:w-4/5'
-                blocks={body}
+                content={body}
                 renderContainerOnSingleChild
               />
             )}
@@ -120,6 +122,14 @@ const query = groq`*[_type == 'event' && slug.current == $slug] | order(timeStar
                        isMainEvent,
                        body,
                        slug,
+                       images[]{
+                         asset->{
+                            _id,
+                            order,
+                            url
+                         },
+                         title
+                       },
                        mainImage{
                            asset->{
                                _id,
@@ -180,9 +190,9 @@ export async function getStaticProps(context) {
             </div>
           )}
         {shouldRenderBody && (
-          <BlockContent
+          <PortableText
             className='font-extralight'
-            blocks={body}
+            content={body}
             renderContainerOnSingleChild
           />
         )}

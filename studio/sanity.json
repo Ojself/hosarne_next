@@ -14,11 +14,14 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "vercel-deploy",
-    "@sanity/dashboard"
+    "@sanity/dashboard",
+    "dashboard-widget-netlify"
   ],
   "env": {
     "development": {
-      "plugins": ["@sanity/vision"]
+      "plugins": [
+        "@sanity/vision"
+      ]
     }
   },
   "parts": [

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import groq from "groq";
-import BlockContent from "@sanity/block-content-to-react";
+import PortableText from "react-portable-text";
 import Head from "next/head";
 import Image from "../components/Image";
 import { sanityClient } from "../sanity";
@@ -40,12 +40,12 @@ const Gallery = ({ gallery }) => {
                 </h1>
               </div>
               <div className='text-xs lg:text-sm flex flex-col'>
-                <BlockContent
+                <PortableText
                   className='mb-6'
                   blocks={body_no}
                   renderContainerOnSingleChild={true}
                 />
-                <BlockContent
+                <PortableText
                   className='text-xs'
                   blocks={body_en}
                   renderContainerOnSingleChild={true}

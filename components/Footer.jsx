@@ -2,21 +2,21 @@ import { SocialIcon } from "react-social-icons";
 
 const Footer = () => {
   const socialIcons = (
-    <>
+    <div className='bg-transparent'>
       <SocialIcon
         className='h-8'
         style={{ height: "2.5em" }}
+        bgColor='#eee'
         fgColor='#000'
-        bgColor='transparent'
         url='https://www.instagram.com/hos_arne/'
       />
       <SocialIcon
         style={{ height: "2.5em" }}
+        bgColor='#eee'
         fgColor='#000'
-        bgColor='transparent'
         url='https://www.facebook.com/hosarne'
       />
-    </>
+    </div>
   );
   const adress = (
     <address className='not-italic'>

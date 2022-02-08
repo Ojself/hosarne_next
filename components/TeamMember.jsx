@@ -1,5 +1,5 @@
 import Image from "./Image";
-import BlockContent from "@sanity/block-content-to-react";
+import PortableText from "react-portable-text";
 
 const TeamMember = ({ name, title, email, mobile, body, image }) => {
   const shouldRenderBody = body && body.length > 0;
@@ -29,11 +29,7 @@ const TeamMember = ({ name, title, email, mobile, body, image }) => {
         <p className='text-xs'>{email}</p>
         <p className='text-xs mb-4'>{mobile}</p>
         {shouldRenderBody && (
-          <BlockContent
-            className=''
-            blocks={body}
-            renderContainerOnSingleChild={true}
-          />
+          <PortableText content={body} renderContainerOnSingleChild={true} />
         )}
       </div>
     </div>
