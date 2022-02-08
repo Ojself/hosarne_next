@@ -1,8 +1,10 @@
 node_modules
 node_modules/
+**node_modules
 studio
 studio/
 .next
 package-lock
 .vercel
 .test
+.env.local

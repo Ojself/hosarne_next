@@ -88,7 +88,7 @@ function Event({ event }) {
                 <Image
                   image={image}
                   alt={image.alt}
-                  className='w-full h-64 object-cover'
+                  className='w-auto h-80 object-cover absolute'
                 />
                 <h5>{image.title}</h5>
               </a>
