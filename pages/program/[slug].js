@@ -15,7 +15,6 @@ function Event({ event }) {
   if (!event || !event.length) {
     return <div>Loading...</div>;
   }
-  console.log(event);
   const { body, timeStart, timeEnd, mainImage, title, theme, images } =
     event[0];
   const shouldRenderGalleryImages = images && images.length > 0;
@@ -35,7 +34,6 @@ function Event({ event }) {
   }, [backgroundColor]);
 
   const shouldRenderBody = body && body.length;
-  console.log(body);
   return (
     <>
       <Head>
