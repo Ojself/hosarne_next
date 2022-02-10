@@ -6,6 +6,7 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
           <link rel='shortcut icon' href='/favicon.ico' />
+          <link rel='manifest' href='/manifest.json' />
           <meta name='theme-color' content='#ACACAC' />
           <script
             async
