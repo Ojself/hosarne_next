@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+/* import React, { useEffect, useState } from "react";
 
 import { AiOutlineLoading3Quarters, AiOutlineCheck } from "react-icons/ai";
 import { RiForbidLine } from "react-icons/ri";
@@ -65,3 +65,4 @@ const MailchimpForm = () => {
 };
 
 export default MailchimpForm;
+ */
