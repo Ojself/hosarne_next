@@ -1,50 +1,24 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-
-import { handleMailChimp } from "../utils/mailchimp";
 import { HiPlus } from "react-icons/hi";
 import Link from "next/link";
 
+import MailchimpForm from "./MailchimpForm";
+
 const NavBar = () => {
-  const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(true);
   const [showExtraMenuButton, setShowExtraMenuButton] = useState(false);
-  const [error, setError] = useState(false);
 
   const router = useRouter();
-  console.log(loading, "mail loading");
+  const amIActive = (path) => {
+    return router.pathname === path;
+  };
 
   useEffect(() => {
     const userIsAtSingleEvent = router.pathname.includes("/program/");
     setShowExtraMenuButton(userIsAtSingleEvent);
     setIsOpen(!userIsAtSingleEvent);
   }, [router]);
-
-  const handleChange = (e) => {
-    setEmail(e.target.value);
-  };
-  const handleError = (e) => {
-    console.error("ERROR:\n", e);
-    setError(true);
-    setTimeout(() => {
-      setError(false);
-    }, 5000);
-  };
-
-  const handleSubmit = async () => {
-    setLoading(true);
-    try {
-      handleMailChimp(email);
-    } catch (e) {
-      handleError(e);
-    }
-    setLoading(false);
-  };
-
-  const amIActive = (path) => {
-    return router.pathname === path;
-  };
 
   const rotatedStyle = isOpen ? "transform rotate-45" : "";
   const menuButton = (
@@ -129,24 +103,7 @@ const NavBar = () => {
           id='adress'
           className='flex flex-col-reverse text-sm lg:text-lg w-1/2 lg:w-1/3'
         >
-          <form style={{ zIndex: 250 }} onSubmit={handleSubmit}>
-            <label
-              style={{ lineHeight: "1px" }}
-              className='font-thin text:xs lg:text-sm'
-            >
-              Nyhetsbrev: <br className='' /> (Mail)
-              <input
-                type='text'
-                style={{ backgroundColor: "transparent" }}
-                id='email-input'
-                className='w-1/4 lg:w-1/3 lg:ml-2 text-xs lg:text-lg focus:border-green-500 outline-none border-black border-t-0 border-l-0 border-r-0 border z-100'
-                value={email}
-                onChange={handleChange}
-              />
-            </label>
-            {error && <p className='text-red-700'> Noe gikk galt </p>}
-            <br />
-          </form>
+          <MailchimpForm />
           <address className='not-italic font-thin text-xs lg:text-sm'>
             Gøteborggata 27B
             <br />

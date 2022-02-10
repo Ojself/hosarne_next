@@ -5,6 +5,8 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <link rel='shortcut icon' href='/favicon.ico' />
+          <meta name='theme-color' content='#ACACAC' />
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}

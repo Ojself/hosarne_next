@@ -4,7 +4,6 @@ import Head from "next/head";
 import PortableText from "react-portable-text";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import { AiOutlineArrowDown } from "react-icons/ai";
-/* import { SocialIcon } from "react-social-icons"; */
 
 import Image from "../../components/Image";
 import { sanityClient } from "../../sanity";
