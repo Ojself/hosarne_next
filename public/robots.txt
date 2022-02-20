@@ -1,4 +1,0 @@
-Sitemap: https://www.hosarne.no/sitemap.xml
-
-User-agent: *
-Allow: /*

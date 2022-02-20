@@ -4,7 +4,7 @@ module.exports = {
     defaultLocale: "no",
   },
   images: {
-    domains: ["cdn.sanity.io", "picsum.photos"],
+    domains: ["picsum.photos"],
     formats: ["image/avif", "image/webp"],
   },
 };
