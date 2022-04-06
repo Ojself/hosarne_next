@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { HiPlus } from "react-icons/hi";
 import Link from "next/link";
 
-/* import MailchimpForm from "./MailchimpForm"; */
+import MailchimpForm from "./MailchimpForm";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -103,7 +103,7 @@ const NavBar = () => {
           id='adress'
           className='flex flex-col-reverse text-sm lg:text-lg w-1/2 lg:w-1/3'
         >
-          {/* <MailchimpForm /> */}
+          <MailchimpForm />
           <address className='not-italic font-thin text-xs lg:text-sm'>
             Gøteborggata 27B
             <br />

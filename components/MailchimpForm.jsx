@@ -1,4 +1,4 @@
-/* import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { AiOutlineLoading3Quarters, AiOutlineCheck } from "react-icons/ai";
 import { RiForbidLine } from "react-icons/ri";
@@ -7,7 +7,6 @@ import MailchimpSubscribe from "react-mailchimp-subscribe";
 
 const CustomForm = ({ status, onValidated }) => {
   const [email, setEmail] = useState("");
-
   useEffect(() => {
     if (status === "success") setEmail("");
   }, [status]);
@@ -65,4 +64,3 @@ const MailchimpForm = () => {
 };
 
 export default MailchimpForm;
- */
