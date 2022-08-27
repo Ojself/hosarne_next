@@ -62,7 +62,6 @@ export async function getStaticProps(context) {
     props: {
       photographers,
     },
-    revalidate: 60,
   };
 }
 

@@ -54,7 +54,6 @@ export async function getStaticProps(context) {
     props: {
       teamMembers,
     },
-    revalidate: 60,
   };
 }
 

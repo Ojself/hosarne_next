@@ -110,7 +110,6 @@ export async function getStaticProps(context) {
     props: {
       apartment: data[0],
     },
-    revalidate: 30,
   };
 }
 
