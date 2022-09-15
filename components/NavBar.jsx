@@ -80,7 +80,7 @@ const NavBar = () => {
               Galleriet
             </a>
           </Link>
-          <Link href='/in-house'>
+          {/* <Link href='/in-house'>
             <a
               className={`${
                 amIActive("/in-house") ? "" : "opacity-40"
@@ -88,7 +88,7 @@ const NavBar = () => {
             >
               In-House
             </a>
-          </Link>
+          </Link> */}
           <Link href='/team'>
             <a
               className={`${
