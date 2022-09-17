@@ -48,3 +48,9 @@ export const changeLayOutColors = (theme, noTransition) => {
   footer.style.backgroundColor = theme;
   body.style.backgroundColor = theme;
 };
+
+export const getDateFromTenDaysAgo = () => {
+  const date = new Date();
+  date.setDate(date.getDate() - 10);
+  return date.toISOString().split("T")[0];
+};

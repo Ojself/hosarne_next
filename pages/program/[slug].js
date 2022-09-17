@@ -121,7 +121,7 @@ const query = groq`*[_type == 'event' && slug.current == $slug] | order(timeStar
                        timeStart,
                        timeEnd,
                        'theme': theme->hex,
-                       isMainEvent,
+                       mainEvent,
                        body,
                        slug,
                        images[]{

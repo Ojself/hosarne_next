@@ -4,7 +4,8 @@ import Image from "./Image";
 import { formatDates } from "../utils/helpers";
 
 const EventPreview = ({ somethingIsHovering, handleEventHover, event }) => {
-  const { mainImage, title, theme, isMainEvent, timeEnd, timeStart, slug } =
+  console.log(event);
+  const { mainImage, title, theme, mainEvent, timeEnd, timeStart, slug } =
     event;
   const [hovering, setHovering] = useState(false);
 
@@ -14,7 +15,7 @@ const EventPreview = ({ somethingIsHovering, handleEventHover, event }) => {
   };
   const opacity =
     !hovering && somethingIsHovering ? "opacity-10" : "opacity-100";
-  const width = isMainEvent ? "w-full lg:w-2/5" : "w-full lg:w-1/4";
+  const width = mainEvent ? "w-full lg:w-2/5" : "w-full lg:w-1/4";
 
   return (
     <article

@@ -4,7 +4,6 @@ import Head from "next/head";
 import { sanityClient } from "../../sanity";
 import EventPreview from "../../components/EventPreview";
 import { changeLayOutColors, getDateFromTenDaysAgo } from "../../utils/helpers";
-import Link from "next/link";
 
 const Program = ({ events }) => {
   const [somethingIsHovering, setSomethingIsHovering] = useState(false);
@@ -20,9 +19,9 @@ const Program = ({ events }) => {
   return (
     <>
       <Head>
-        <title>Hos Arne - Program</title>
+        <title>Hos Arne - Arkiv</title>
         <link rel='icon' href='/favicon.ico' />
-        <meta name='description' content='Hos Arne - Program' />
+        <meta name='description' content='Hos Arne - Arkiv' />
       </Head>
       <main id='events-home' className='text-white'>
         <section className='flex flex-wrap mt-12 lg:mt-20 lg:mb-32'>
@@ -35,15 +34,12 @@ const Program = ({ events }) => {
             />
           ))}
         </section>
-        <section className='mb-16 mx-2 lg:mx-6 text-black hover:underline'>
-          <Link href='/program/arkiv'>Se tidligere arrangementer</Link>
-        </section>
       </main>
     </>
   );
 };
 
-const query = groq`*[_type == "event" && timeStart > $tenDaysAgo] | order(timeStart desc){
+const query = groq`*[_type == "event" && timeStart < $tenDaysAgo] | order(timeStart desc){
                        title,
                        timeStart,
                        timeEnd,
@@ -68,7 +64,7 @@ export async function getStaticProps(context) {
     props: {
       events,
     },
-    revalidate: 3600,
+    revalidate: 36000,
   };
 }
 
