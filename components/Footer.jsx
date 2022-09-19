@@ -50,11 +50,11 @@ const Footer = () => {
           +47 41259913 <br />
         </div>
         <div className='text-sm mb-2'>
-          Cat / Gallerist & kurator
+          Marius / Kulturansvarlig
           <br />
-          cat@hos-arne.no
+          marius3@online.no
           <br />
-          +47 46427881
+          +47 41777276
           <br />
         </div>
         <div className='text-sm mb-2'>
