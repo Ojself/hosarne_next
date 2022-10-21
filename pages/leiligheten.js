@@ -45,11 +45,6 @@ const Apartment = ({ apartment }) => {
                   content={body_no}
                   renderContainerOnSingleChild={true}
                 />
-                <PortableText
-                  className='text-xs'
-                  content={body_en}
-                  renderContainerOnSingleChild={true}
-                />
               </div>
             </div>
           </div>
