@@ -4,7 +4,6 @@ import Image from "./Image";
 import { formatDates } from "../utils/helpers";
 
 const EventPreview = ({ somethingIsHovering, handleEventHover, event }) => {
-  console.log(event);
   const { mainImage, title, theme, mainEvent, timeEnd, timeStart, slug } =
     event;
   const [hovering, setHovering] = useState(false);

@@ -57,13 +57,13 @@ const Footer = () => {
           +47 41777276
           <br />
         </div>
-        <div className='text-sm mb-2'>
+        {/* <div className='text-sm mb-2'>
           Alex / Veileder
           <br />
           alex@hos-arne.no
           <br />
           +47 93869353
-        </div>
+        </div> */}
       </div>
     </footer>
   );
