@@ -33,7 +33,7 @@ const Apartment = ({ apartment }) => {
               style={{ borderTopWidth: "2px" }}
               className='lg:block hidden w-3/4 border-black border-1'
             />
-            <div className='flex flex-col lg:flex-row mt-6'>
+            <div className='flex flex-col mt-6'>
               <div className='w-1/3'>
                 <h1 className='text-xl lg:text-4xl font-mirage-reg'>
                   Leiligheten
