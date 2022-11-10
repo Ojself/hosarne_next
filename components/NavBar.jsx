@@ -110,14 +110,11 @@ const NavBar = () => {
             0566 OSLO
             <br />
           </address>
-          <div className='mb-2'>
+          <div className='mb-2 uppercase'>
             <p className='text-xs lg:text-sm font-mirage-reg'>
-              ROM FOR KULTUR, KUNST
+              En arena for den
             </p>
-            <p className='text-xs lg:text-sm font-mirage-reg'>
-              {" "}
-              & DET I MELLOM
-            </p>
+            <p className='text-xs lg:text-sm font-mirage-reg'>gode samtalen</p>
           </div>
         </div>
       </nav>
