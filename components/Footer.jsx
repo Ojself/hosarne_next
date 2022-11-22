@@ -46,7 +46,7 @@ const Footer = () => {
       <div className='flex w-2/5 lg:w-5/12 lg:flex-row flex-col justify-around'>
         <div className='text-sm mb-2'>
           MK / Daglig leder <br />
-          mk@hos-arne.no <br />
+          mk@hosarne.no <br />
           +47 41259913 <br />
         </div>
         <div className='text-sm mb-2'>
