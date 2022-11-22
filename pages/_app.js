@@ -2,7 +2,7 @@ import "../styles/globals.css";
 import "../styles/home.css";
 import "../styles/index.css";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 import * as ga from "../utils/analytics";
@@ -13,9 +13,27 @@ import { sanityClient } from "../sanity";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
-function MyApp({ Component, pageProps }) {
+const query = groq`*[_type == 'footer']{
+                   name,
+                   title,
+                   email,
+                   mobile
+               }`;
+
+const MyApp = ({ Component, pageProps }) => {
+  const [footerData, setFooterData] = useState(null);
   const router = useRouter();
   useEffect(() => {
+    const fetchFooterData = async () => {
+      const data = await sanityClient.fetch(query);
+      return data;
+    };
+    if (!footerData) {
+      fetchFooterData().then((data) => {
+        setFooterData(data);
+      });
+    }
+
     const handleRouteChange = (url) => {
       ga.pageview(url);
     };
@@ -29,26 +47,9 @@ function MyApp({ Component, pageProps }) {
     <>
       <NavBar />
       <Component {...pageProps} />
-      <Footer />
+      <Footer data={footerData} />
     </>
   );
-}
+};
 
 export default MyApp;
-
-const query = groq`*[_type == 'footer']{
-                       name,
-                       title,
-                       email,
-                       mobile
-                   }`;
-
-export async function getStaticProps(context) {
-  const data = await sanityClient.fetch(query);
-  return {
-    props: {
-      data,
-    },
-    revalidate: 3600,
-  };
-}

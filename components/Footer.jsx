@@ -1,6 +1,6 @@
 import { SocialIcon } from "react-social-icons";
 
-const Footer = () => {
+const Footer = ({ data }) => {
   const socialIcons = (
     <div className='bg-transparent'>
       <SocialIcon
@@ -43,22 +43,22 @@ const Footer = () => {
       </div>
       <div className='text-xs hidden lg:block'>{adress}</div>
       <div className='hidden lg:flex'>{socialIcons}</div>
-      <div className='flex w-2/5 lg:w-5/12 lg:flex-row flex-col justify-around'>
-        <div className='text-sm mb-2'>
-          MK / Daglig leder <br />
-          mk@hosarne.no <br />
-          +47 41259913 <br />
-        </div>
-        <div className='text-sm mb-2'>
-          Marius / Kultursjef
-          <br />
-          marius@hosarne.no
-          <br />
-          +47 41777276
-          <br />
-        </div>
-      </div>
+      <FooterPeople people={data} />
     </footer>
+  );
+};
+const FooterPeople = ({ people }) => {
+  if (!people) return null;
+  return (
+    <div className='flex w-2/5 lg:w-5/12 lg:flex-row flex-col justify-around'>
+      {people.map((person) => (
+        <div key={person.mobile} className='text-sm mb-2'>
+          {person.name} / {person.title} <br />
+          {person.email} <br />
+          {person.mobile} <br />
+        </div>
+      ))}
+    </div>
   );
 };
 
