@@ -52,18 +52,11 @@ const Footer = () => {
         <div className='text-sm mb-2'>
           Marius / Kultursjef
           <br />
-          marius3@online.no
+          marius@hosarne.no
           <br />
           +47 41777276
           <br />
         </div>
-        {/* <div className='text-sm mb-2'>
-          Alex / Veileder
-          <br />
-          alex@hos-arne.no
-          <br />
-          +47 93869353
-        </div> */}
       </div>
     </footer>
   );
