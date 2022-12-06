@@ -15,9 +15,9 @@ const Apartment = ({ apartment }) => {
   return (
     <>
       <Head>
-        <title>Hos Arne - Leiligheten</title>
+        <title>Leiligheten - Hos Arne</title>
         <link rel='icon' href='/favicon.ico' />
-        <meta name='description' content='Hos Arne - Leiligheten' />
+        <meta name='description' content='Leiligheten - Hos Arne' />
       </Head>
       <main className='font-book mb-12 mt-12 lg:mt-20'>
         <section className='flex flex-col lg:flex-row justify-center m-h-screen'>

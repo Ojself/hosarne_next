@@ -19,9 +19,9 @@ function Photographer({ photographer }) {
   return (
     <>
       <Head>
-        <title>Hos Arne - {name || ""}</title>
+        <title>{name || ""} - Hos Arne</title>
         <link rel='icon' href='/favicon.ico' />
-        <meta name='description' content={`Hos Arne - ${name}`} />
+        <meta name='description' content={`${name || ""} - Hos Arne`} />
       </Head>
       <main className='flex flex-col mt-20 mb-44'>
         <section className='flex flex-row justify-around mb-24'>

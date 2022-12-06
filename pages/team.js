@@ -17,9 +17,9 @@ const Team = ({ teamMembers }) => {
   return (
     <>
       <Head>
-        <title>Hos Arne - Team</title>
+        <title>Team - Hos Arne</title>
         <link rel='icon' href='/favicon.ico' />
-        <meta name='description' content='Hos Arne - Team' />
+        <meta name='description' content='Team - Hos Arne' />
       </Head>
       <main className='flex flex-col items-center mb-12 mt-12 lg:mt-20'>
         <div className='w-11/12 grid-cols-1 grid gap-1 xl:gap-4 xl:grid-cols-2 xl:grid-flow-row lg:px-2'>

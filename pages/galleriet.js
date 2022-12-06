@@ -17,9 +17,9 @@ const Gallery = ({ gallery }) => {
   return (
     <>
       <Head>
-        <title>Hos Arne - Galleriet</title>
+        <title>Galleriet - Hos Arne</title>
         <link rel='icon' href='/favicon.ico' />
-        <meta name='description' content={`Hos Arne - Galleriet`} />
+        <meta name='description' content='Hos Arne - Galleriet' />
       </Head>
       <main className='font-book mb-12 mt-12 lg:mt-20'>
         <section className='flex flex-col lg:flex-row justify-center m-h-screen'>

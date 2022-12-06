@@ -36,9 +36,9 @@ function Event({ event }) {
   return (
     <>
       <Head>
-        <title>Hos Arne - {title || ""}</title>
+        <title>{title || ""} - Hos Arne</title>
         <link rel='icon' href='/favicon.ico' />
-        <meta name='description' content={`Hos Arne - ${title}`} />
+        <meta name='description' content={`${title} - Hos Arne`} />
       </Head>
       <button
         style={{ opacity: scrollOpacity }}

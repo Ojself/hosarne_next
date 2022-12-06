@@ -19,11 +19,11 @@ const InHouse = ({ photographers }) => {
   return (
     <>
       <Head>
-        <title>Hos Arne - In House</title>
+        <title>In House - Hos Arne</title>
         <link rel='icon' href='/favicon.ico' />
-        <meta name='description' content='Hos Arne In House' />
+        <meta name='description' content='In House - Hos Arne' />
       </Head>
-      <main className='mb-32 w-full flex justify-around mb-12 mt-12 lg:mt-20'>
+      <main className='mb-32 w-full flex justify-around mt-12 lg:mt-20'>
         <section className='w-full lg:w-5/6 mt-6 flex flex-row-reverse flex-wrap px-4 lg:px-0'>
           {photographers.map((photographer, i) => {
             return (

@@ -20,9 +20,9 @@ const Program = ({ events }) => {
   return (
     <>
       <Head>
-        <title>Hos Arne - Program</title>
+        <title>Program - Hos Arne</title>
         <link rel='icon' href='/favicon.ico' />
-        <meta name='description' content='Hos Arne - Program' />
+        <meta name='description' content='Program - Hos Arne' />
       </Head>
       <main id='events-home' className='text-white'>
         <section className='flex flex-wrap mt-12 lg:mt-20 lg:mb-32'>

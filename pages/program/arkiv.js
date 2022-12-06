@@ -19,9 +19,9 @@ const Program = ({ events }) => {
   return (
     <>
       <Head>
-        <title>Hos Arne - Arkiv</title>
+        <title>Arkiv - Hos Arne</title>
         <link rel='icon' href='/favicon.ico' />
-        <meta name='description' content='Hos Arne - Arkiv' />
+        <meta name='description' content='Arkiv - Hos Arne' />
       </Head>
       <main id='events-home' className='text-white'>
         <section className='flex flex-wrap mt-12 lg:mt-20 lg:mb-32'>
