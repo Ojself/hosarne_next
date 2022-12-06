@@ -1,19 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { AiOutlineLoading3Quarters, AiOutlineCheck } from "react-icons/ai";
 import { RiForbidLine } from "react-icons/ri";
+import axios from "axios";
 
-import MailchimpSubscribe from "react-mailchimp-subscribe";
-
-const CustomForm = ({ status, onValidated }) => {
+const CustomNewsLetterForm = ({}) => {
   const [email, setEmail] = useState("");
-  useEffect(() => {
-    if (status === "success") setEmail("");
-  }, [status]);
+  const [status, setStatus] = useState("idle");
 
-  const handleSubmit = (e) => {
+  const timeOutStatus = (newStatus = "error") => {
+    setStatus(newStatus);
+    setTimeout(() => {
+      setStatus("idle");
+    }, 5000);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    email && email.indexOf("@") > -1 && onValidated({ EMAIL: email });
+    if (!email || !email.includes("@")) {
+      return timeOutStatus();
+    }
+    setStatus("sending");
+    try {
+      await axios.post("/api/newsletter", { email });
+      timeOutStatus("success");
+    } catch (err) {
+      timeOutStatus("error");
+    }
   };
 
   return (
@@ -45,22 +58,4 @@ const CustomForm = ({ status, onValidated }) => {
   );
 };
 
-const MailchimpForm = () => {
-  const url =
-    "hosarne.us20.list-manage.com/subscribe/post?u=7139b166a7f7eb01c32dfeaf3&id=e884ff573e";
-
-  return (
-    <MailchimpSubscribe
-      url={url}
-      render={({ subscribe, status, message }) => (
-        <CustomForm
-          status={status}
-          message={message}
-          onValidated={(formData) => subscribe(formData)}
-        />
-      )}
-    />
-  );
-};
-
-export default MailchimpForm;
+export default CustomNewsLetterForm;

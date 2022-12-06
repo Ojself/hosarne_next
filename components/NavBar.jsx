@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { HiPlus } from "react-icons/hi";
 import Link from "next/link";
 
-import MailchimpForm from "./MailchimpForm";
+import CustomNewsLetterForm from "./CustomNewsLetterForm";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -37,6 +37,7 @@ const NavBar = () => {
     </div>
   );
   const navOpacity = isOpen ? "opacity-100" : "opacity-0";
+
   return (
     <header id='navbar' className='bg-white h-64 relative'>
       {showExtraMenuButton && menuButton}
@@ -103,7 +104,8 @@ const NavBar = () => {
           id='adress'
           className='flex flex-col-reverse text-sm lg:text-lg w-1/2 lg:w-1/3'
         >
-          <MailchimpForm />
+          <CustomNewsLetterForm />
+
           <address className='not-italic font-thin text-xs lg:text-sm'>
             Gøteborggata 27B
             <br />

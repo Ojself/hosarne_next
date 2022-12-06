@@ -12,6 +12,8 @@ export default class MyDocument extends Document {
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
           />
+          <script async src='/ml.js'></script>
+
           <script
             dangerouslySetInnerHTML={{
               __html: `
