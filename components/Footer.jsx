@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { SocialIcon } from "react-social-icons";
 
 const Footer = ({ data }) => {
@@ -30,8 +31,13 @@ const Footer = ({ data }) => {
       className='flex h-60 w-full items-center justify-around bg-white text-base'
     >
       <div>
-        <div className='uppercase text-xs text-center lg:text-base mb-2'>
-          Hos Arne
+        <div className=' text-xs text-center lg:text-base mb-2'>
+          <p className='uppercase'>Hos Arne </p>
+          <Link href='/privacy'>
+            <a>
+              <p className='text-xss hover:underline pointer'> Privacy</p>
+            </a>
+          </Link>
         </div>
         <div className='lg:text-base text-xs text-center lg:hidden mb-2'>
           {adress}
