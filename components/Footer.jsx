@@ -61,7 +61,6 @@ const FooterPeople = ({ people }) => {
         <div key={person.mobile} className='text-sm mb-2'>
           {person.name} / {person.title} <br />
           {person.email} <br />
-          {person.mobile} <br />
         </div>
       ))}
     </div>
