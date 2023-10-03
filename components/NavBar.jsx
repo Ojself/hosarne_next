@@ -102,22 +102,20 @@ const NavBar = () => {
         </div>
         <div
           id='adress'
-          className='flex flex-col-reverse text-sm lg:text-lg w-1/2 lg:w-1/3'
+          className='flex flex-col text-sm lg:text-lg w-1/2 lg:w-1/3'
         >
-          <CustomNewsLetterForm />
-
-          <address className='not-italic font-thin text-xs lg:text-sm'>
-            Gøteborggata 27B
-            <br />
-            0566 OSLO
-            <br />
-          </address>
           <div className='mb-2 uppercase'>
             <p className='text-xs lg:text-sm font-mirage-reg'>
               En arena for den
             </p>
             <p className='text-xs lg:text-sm font-mirage-reg'>gode samtalen</p>
           </div>
+          <address className='not-italic font-thin text-xs lg:text-sm'>
+            Gøteborggata 27B
+            <br />
+            0566 OSLO
+            <br />
+          </address>
         </div>
       </nav>
       <div id='hos_arne-fixed' className='font-swhong text-6xl w-56 lg:w-96'>
