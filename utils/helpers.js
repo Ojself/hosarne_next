@@ -13,11 +13,14 @@ export const formatDates = (d1, d2) => {
     return date1;
   }
   const date2 = formatDate(d2);
+  if (date1 === date2) return date1;
+
   if (date1.slice(-2) === date2.slice(-2)) {
     const from = date1.substring(0, 5);
     const to = date2;
     return `${from} - ${to}`;
   }
+
   return `${date1} - ${date2}`;
 };
 
