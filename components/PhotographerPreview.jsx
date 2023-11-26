@@ -1,6 +1,7 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import Image from "./Image";
+import Image from "./SanityImage";
+import SanityImage from "./SanityImage";
 
 const getFontSize = (str) => {
   return str.length > 10 ? "text-3xl" : "text-5xl";
@@ -25,14 +26,14 @@ const PhotographerPreview = ({ order, photographer }) => {
 
   const scaleStyle = hovering ? "scale-105" : "scale-100";
   const component = (
-    <a
+    <div
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
       style={{ height: "32rem" }}
       className={`flex flex-col w-full md:w-80 my-8 transform transition duration-700 ease-in-out bg-black text-white`}
     >
       <div className='h-1/2 overflow-hidden'>
-        <Image
+        <SanityImage
           className={`object-cover w-full h-full ${scaleStyle} transition ease-in-out duration-500`}
           image={image}
           alt={name}
@@ -50,7 +51,7 @@ const PhotographerPreview = ({ order, photographer }) => {
           </div>
         </div>
       </div>
-    </a>
+    </div>
   );
 
   return <Wrapper slug={slug} component={component} />;

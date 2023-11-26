@@ -5,7 +5,7 @@ import PortableText from "react-portable-text";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import { AiOutlineArrowDown } from "react-icons/ai";
 
-import Image from "../../components/Image";
+import Image from "../../components/SanityImage";
 import { sanityClient } from "../../sanity";
 import { changeLayOutColors, formatDates } from "../../utils/helpers";
 

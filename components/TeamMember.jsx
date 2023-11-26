@@ -1,5 +1,5 @@
-import Image from "./Image";
 import PortableText from "react-portable-text";
+import SanityImage from "./SanityImage";
 
 const TeamMember = ({ name, title, email, mobile, body, image }) => {
   const shouldRenderBody = body && body.length > 0;
@@ -15,11 +15,7 @@ const TeamMember = ({ name, title, email, mobile, body, image }) => {
   return (
     <div className='flex flex-col lg:flex-row h-auto w-100 '>
       <div className='w-full lg:w-1/3'>
-        <Image
-          className='object-contain w-full h-full'
-          image={image}
-          alt={image}
-        />
+        <SanityImage image={image} alt={image} />
       </div>
       <div className='w-full pl-2 lg:w-1/3 flex flex-col justify-center '>
         <h1 className='text-base lg:text-lg w-full font-mirage-med'>
@@ -27,8 +23,7 @@ const TeamMember = ({ name, title, email, mobile, body, image }) => {
         </h1>
         <p className='text-sm lg:text-base mb-4'>{title}</p>
         <p className='text-xs'>{email}</p>
-        <p className='text-xs mb-4'>{mobile}</p>
-        {shouldRenderBody && (
+        {!!shouldRenderBody && (
           <PortableText content={body} renderContainerOnSingleChild={true} />
         )}
       </div>

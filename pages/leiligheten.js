@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import groq from "groq";
 import PortableText from "react-portable-text";
-import Image from "../components/Image";
 import Head from "next/head";
 import { sanityClient } from "../sanity";
 import { changeLayOutColors } from "../utils/helpers";
+import SanityImage from "../components/SanityImage";
 
 const Apartment = ({ apartment }) => {
   const { body_en, body_no, image, images } = apartment;
@@ -22,7 +22,7 @@ const Apartment = ({ apartment }) => {
       <main className='font-book mb-12 mt-12 lg:mt-20'>
         <section className='flex flex-col lg:flex-row justify-center m-h-screen'>
           <div className='w-11/12 self-center lg:w-2/5 h-full'>
-            <Image
+            <SanityImage
               className='object-cover h-full w-full'
               image={image}
               alt='Leiligheten front'
@@ -58,14 +58,9 @@ const Apartment = ({ apartment }) => {
                   <a
                     key={image.asset.url}
                     href={image.asset.url}
-                    className='hover:opacity-75'
+                    className='hover:opacity-75 duration-300 ease-in-out transition'
                   >
-                    <Image
-                      image={image}
-                      alt={image.alt}
-                      objectFit='cover'
-                      className='w-full h-full object-contain'
-                    />
+                    <SanityImage image={image} alt={image.alt} />
                     <h5>{image.title}</h5>
                   </a>
                 ))}

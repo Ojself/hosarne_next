@@ -37,6 +37,7 @@ const MyApp = ({ Component, pageProps }) => {
     const handleRouteChange = (url) => {
       ga.pageview(url);
     };
+    console.log("si hei til utvikleren 👉 tormod.flesjo@gmail.com");
     router.events.on("routeChangeComplete", handleRouteChange);
     return () => {
       router.events.off("routeChangeComplete", handleRouteChange);

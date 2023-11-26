@@ -45,41 +45,37 @@ const NavBar = () => {
         className={`${navOpacity} transition duration-500 ease-in-out w-full flex flex-row justify-between pt-12`}
       >
         <div className='flex flex-col uppercase text-sm lg:text-xl w-1/3 lg:w-2/3 pl-12 lg:pl-20'>
-          <Link href='/'>
-            <a
-              className={`${
-                amIActive("/") ? "" : "opacity-40"
-              } hover:opacity-100 font-mirage-reg mb-2`}
-            >
-              Hos Arne
-            </a>
+          <Link
+            className={`${
+              amIActive("/") ? "" : "opacity-40"
+            } hover:opacity-100 font-mirage-reg mb-2`}
+            href='/'
+          >
+            Hos Arne
           </Link>
-          <Link href='/program'>
-            <a
-              className={`${
-                amIActive("/program") ? "" : "opacity-40"
-              } hover:opacity-100 font-mirage-reg`}
-            >
-              Program
-            </a>
+          <Link
+            className={`${
+              amIActive("/program") ? "" : "opacity-40"
+            } hover:opacity-100 font-mirage-reg`}
+            href='/program'
+          >
+            Program
           </Link>
-          <Link href='/leiligheten'>
-            <a
-              className={`${
-                amIActive("/leiligheten") ? "" : "opacity-40"
-              } hover:opacity-100 font-mirage-reg`}
-            >
-              Leiligheten
-            </a>
+          <Link
+            className={`${
+              amIActive("/leiligheten") ? "" : "opacity-40"
+            } hover:opacity-100 font-mirage-reg`}
+            href='/leiligheten'
+          >
+            Leiligheten
           </Link>
-          <Link href='/galleriet'>
-            <a
-              className={`${
-                amIActive("/galleriet") ? "" : "opacity-40"
-              } hover:opacity-100 font-mirage-reg`}
-            >
-              Galleriet
-            </a>
+          <Link
+            className={`${
+              amIActive("/galleriet") ? "" : "opacity-40"
+            } hover:opacity-100 font-mirage-reg`}
+            href='/galleriet'
+          >
+            Galleriet
           </Link>
           {/* <Link href='/in-house'>
             <a
@@ -90,14 +86,13 @@ const NavBar = () => {
               In-House
             </a>
           </Link> */}
-          <Link href='/team'>
-            <a
-              className={`${
-                amIActive("/team") ? "" : "opacity-40"
-              } hover:opacity-100 font-mirage-reg`}
-            >
-              Team
-            </a>
+          <Link
+            className={`${
+              amIActive("/team") ? "" : "opacity-40"
+            } hover:opacity-100 font-mirage-reg`}
+            href='/team'
+          >
+            Team
           </Link>
         </div>
         <div

@@ -2,9 +2,9 @@ import { useEffect } from "react";
 import groq from "groq";
 import PortableText from "react-portable-text";
 import Head from "next/head";
-import Image from "../components/Image";
 import { sanityClient } from "../sanity";
 import { changeLayOutColors } from "../utils/helpers";
+import SanityImage from "../components/SanityImage";
 
 const Gallery = ({ gallery }) => {
   const { body_en, body_no, image, images } = gallery;
@@ -24,7 +24,7 @@ const Gallery = ({ gallery }) => {
       <main className='font-book mb-12 mt-12 lg:mt-20'>
         <section className='flex flex-col lg:flex-row justify-center m-h-screen'>
           <div className='w-11/12 self-center lg:w-2/5 h-full'>
-            <Image
+            <SanityImage
               className='object-cover h-full w-full'
               image={image}
               alt='Galleriet front'
@@ -71,11 +71,7 @@ const Gallery = ({ gallery }) => {
                     href={image.asset.url}
                     className='hover:opacity-75'
                   >
-                    <Image
-                      image={image}
-                      alt={image.alt}
-                      className='w-full h-full object-contain'
-                    />
+                    <Image image={image} alt={image.alt} />
                     <h5>{image.title}</h5>
                   </a>
                 ))}

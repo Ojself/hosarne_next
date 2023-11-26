@@ -2,9 +2,9 @@ import { useEffect } from "react";
 import PortableText from "react-portable-text";
 import groq from "groq";
 import Head from "next/head";
-import Image from "../../components/Image";
 import { sanityClient } from "../../sanity";
 import { changeLayOutColors } from "../../utils/helpers";
+import SanityImage from "../../components/SanityImage";
 
 function Photographer({ photographer }) {
   useEffect(() => {
@@ -42,7 +42,7 @@ function Photographer({ photographer }) {
             )}
           </div>
           <div className='w-2/5'>
-            <Image image={image} alt={image.alt} />
+            <SanityImage image={image} alt={image.alt} />
           </div>
         </section>
         <section className='my-5 grid grid-cols-1 lg:grid-cols-4 gap-4 mx-4 '>
@@ -54,11 +54,7 @@ function Photographer({ photographer }) {
                   href={image.asset.url}
                   className='hover:opacity-75'
                 >
-                  <Image
-                    image={image}
-                    alt={image.alt}
-                    className='w-full h-64 object-cover'
-                  />
+                  <SanityImage image={image} alt={image.alt} />
                   <h5>{image.title}</h5>
                 </a>
               );

@@ -34,9 +34,7 @@ const Footer = ({ data }) => {
         <div className=' text-xs text-center lg:text-base mb-2'>
           <p className='uppercase'>Hos Arne </p>
           <Link href='/privacy'>
-            <a>
-              <p className='text-xss hover:underline pointer'> Privacy</p>
-            </a>
+            <p className='text-xss hover:underline pointer'> Privacy</p>
           </Link>
         </div>
         <div className='lg:text-base text-xs text-center lg:hidden mb-2'>

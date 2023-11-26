@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Link from "next/link";
-import Image from "./Image";
+import Image from "./SanityImage";
 import { formatDates } from "../utils/helpers";
+import SanityImage from "./SanityImage";
 
 const EventPreview = ({ somethingIsHovering, handleEventHover, event }) => {
   const { mainImage, title, theme, mainEvent, timeEnd, timeStart, slug } =
@@ -22,16 +23,16 @@ const EventPreview = ({ somethingIsHovering, handleEventHover, event }) => {
       onMouseLeave={() => handleHovering(false)}
       className={`transition duration-1000 ease-in-out ${opacity} ${width} mx-2 lg:mx-6 mb-24 text-black`}
     >
-      <Link href={`/program/${slug.current}`}>
-        <a className='flex flex-col font-book'>
-          <h1 className='text-xl lg:text-3xl font-mirage-reg'>{title}</h1>
-          <h2 className='text-xs lg:text-base'>
-            {formatDates(timeStart, timeEnd)}
-          </h2>
-          <figure>
-            <Image image={mainImage} />
-          </figure>
-        </a>
+      <Link
+        className='flex flex-col font-book '
+        href={`/program/${slug.current}`}
+      >
+        <h1 className='text-xl lg:text-3xl font-mirage-reg'>{title}</h1>
+        <h2 className='text-xs lg:text-base'>
+          {formatDates(timeStart, timeEnd)}
+        </h2>
+
+        <SanityImage image={mainImage} />
       </Link>
     </article>
   );
