@@ -34,7 +34,9 @@ const Privacy = () => {
       <br />
       <p>For Chrome:</p>
       <ol className='list-decimal'>
-        <li>At the top right corner in your browser, click More -> Settings</li>
+        <li>
+          At the top right corner in your browser, click More -{">"} Settings
+        </li>
         <li>Under «Privacy and Security» click Site Settings.</li>
         <li>Click Cookies</li>
         <li>
@@ -484,7 +486,7 @@ const Privacy = () => {
       <br />
       <p>HOS ARNE</p>
       <br />
-      <p>Gøteborggata 2b</p>
+      <p>Gøteborggata 27B</p>
       <p>Oslo, Norway</p>
 
       <p>
@@ -492,7 +494,7 @@ const Privacy = () => {
         <a href='mailto:marius@hosarne.no'>marius@hosarne.no</a>
       </p>
       <br />
-      <p className='italic'>Updated 19.01.2023</p>
+      <p className='italic'>Updated 19.11.2023</p>
     </main>
   );
 };
